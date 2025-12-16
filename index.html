@@ -15,6 +15,31 @@ body{
 }
 .wrap{max-width:420px;margin:0 auto;padding:16px}
 
+/* WELCOME */
+#welcome{
+  position:fixed;inset:0;z-index:999;
+  background:linear-gradient(135deg,#1f2937,#0b1220);
+  display:flex;align-items:center;justify-content:center
+}
+.welcome-box{
+  max-width:360px;width:100%;margin:16px;padding:24px;
+  border-radius:26px;text-align:center;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
+  border:1px solid rgba(255,255,255,.18)
+}
+.welcome-box img{
+  width:120px;height:120px;border-radius:50%;
+  object-fit:cover;margin-bottom:14px
+}
+.welcome-title{font-size:22px;font-weight:800}
+.welcome-name{font-size:26px;font-weight:900;margin-bottom:18px}
+.start-btn{
+  width:100%;padding:14px;border-radius:999px;
+  border:0;background:#e5e7eb;color:#0b1220;
+  font-weight:900;font-size:16px;cursor:pointer
+}
+
+/* HEADER */
 .profile{
   background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
   border:1px solid rgba(255,255,255,.15);
@@ -29,94 +54,80 @@ body{
 .name{font-size:22px;font-weight:800}
 .tag{opacity:.8;font-size:13px}
 
-.menu-btn{
-  position:absolute;
-  top:14px;
-  right:16px;
-  font-size:22px;
-  cursor:pointer
-}
+/* MENU */
+.menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
 .menu{
-  display:none;
-  position:absolute;
-  top:48px;
-  right:16px;
-  background:#020617;
-  border:1px solid #1e293b;
-  border-radius:14px;
-  width:220px;
-  padding:12px;
-  z-index:10
+  display:none;position:absolute;top:48px;right:16px;
+  background:#020617;border:1px solid #1e293b;
+  border-radius:14px;width:220px;padding:12px;z-index:10
 }
-.menu a{
-  display:block;
-  padding:10px;
-  border-radius:10px;
-  color:#e5e7eb;
-  text-decoration:none
-}
+.menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
+/* BUTTON STORE */
 .btn{
-  display:block;
-  width:100%;
-  padding:12px 14px;
-  border-radius:999px;
-  border:0;
-  background:#e5e7eb;
-  color:#0b1220;
-  font-weight:800;
-  text-decoration:none;
-  margin-top:10px;
-  text-align:center
-}
-
-.section{margin-top:14px}
-.card{
-  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
+  display:flex;align-items:center;gap:12px;
+  width:100%;padding:14px 16px;
+  border-radius:16px;
   border:1px solid rgba(255,255,255,.18);
-  border-radius:22px;
-  padding:16px;
-  margin-bottom:14px
+  background:rgba(255,255,255,.08);
+  color:#e5e7eb;font-weight:800;
+  text-decoration:none;margin-top:10px
 }
-.pill{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.18);
-  font-size:12px;
-  margin-bottom:8px
-}
-.title{font-size:20px;font-weight:800;margin:6px 0}
-.list{
-  display:none;
-  font-size:14px;
-  line-height:1.7;
-  margin-top:10px
-}
-img{width:100%;border-radius:16px;margin:10px 0}
+.btn img{width:42px;height:42px;border-radius:12px;object-fit:cover}
+.btn:hover{background:rgba(255,255,255,.15)}
 
-footer{
-  opacity:.7;
-  text-align:center;
-  font-size:12px;
-  margin-top:18px
+.hidden{display:none}
+.list-box{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  padding:14px;
+  font-size:14px;
+  line-height:1.7
 }
+.back{text-align:center;margin-top:14px;font-weight:800;cursor:pointer;opacity:.8}
+
+footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
 </style>
 
 <script>
 function toggleMenu(){
-  const m=document.getElementById('menu');
-  m.style.display = m.style.display === 'block' ? 'none' : 'block';
+  const m=document.getElementById("menu");
+  m.style.display=m.style.display==="block"?"none":"block";
 }
-function toggleList(id){
-  const el=document.getElementById(id);
-  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+function openPage(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
+function backHome(){
+  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
+  document.getElementById("home").classList.remove("hidden");
+}
+function startSite(){
+  document.getElementById("welcome").style.display="none";
+  document.getElementById("bgm").play();
 }
 </script>
 </head>
 
 <body>
+
+<!-- AUDIO -->
+<audio id="bgm" loop preload="auto">
+  <source src="https://raw.githubusercontent.com/zionjs0/whatsapp-media/main/file_1765856657376.mp3" type="audio/mpeg">
+</audio>
+
+<!-- WELCOME -->
+<div id="welcome">
+  <div class="welcome-box">
+    <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
+    <div class="welcome-title">WELCOME TO WEBSITE</div>
+    <div class="welcome-name">IPUNGG SHOP</div>
+    <button class="start-btn" onclick="startSite()">Start Now</button>
+  </div>
+</div>
+
 <div class="wrap">
 
 <!-- HEADER -->
@@ -133,24 +144,37 @@ function toggleList(id){
   </div>
   <div class="name">IPUNGG SHOP</div>
   <div class="tag">Panel • Sewa Bot • Script</div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page">
+  <a class="btn" onclick="openPage('panel')">
+    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+    <span>List Panel Pterodactyl</span>
+  </a>
+
+  <a class="btn" onclick="openPage('bot')">
+    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+    <span>List Sewa Bot WhatsApp</span>
+  </a>
+
+  <a class="btn" onclick="openPage('script')">
+    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+    <span>Script Violet Evergreen</span>
+  </a>
 
   <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">
-    Channel Information
+    <span>📢 Channel Information</span>
   </a>
+
   <a class="btn" href="https://payment-ipungg.vercel.app/">
-    Payment
+    <span>💳 Payment</span>
   </a>
 </div>
 
-<!-- PRODUK -->
-<div class="section">
-
 <!-- PANEL -->
-<div class="card">
-  <span class="pill">Panel Pterodactyl</span>
-  <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-  <a class="btn" onclick="toggleList('panel')">Lihat List Panel</a>
-  <div id="panel" class="list">
+<div id="panel" class="page hidden">
+  <div class="list-box">
     RAM 1GB — 1k<br>
     RAM 2GB — 2k<br>
     RAM 3GB — 3k<br>
@@ -163,14 +187,12 @@ function toggleList(id){
     RAM UNLI — 10k<br>
     Reseller Panel — 15k
   </div>
+  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
-<!-- SEWA BOT -->
-<div class="card">
-  <span class="pill">Sewa Bot</span>
-  <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-  <a class="btn" onclick="toggleList('bot')">Lihat List Sewa Bot</a>
-  <div id="bot" class="list">
+<!-- BOT -->
+<div id="bot" class="page hidden">
+  <div class="list-box">
     1 Minggu — 7k<br>
     1 Bulan — 15k<br>
     2 Bulan — 17k<br>
@@ -178,26 +200,23 @@ function toggleList(id){
     Permanen — 28k<br>
     Jadi Bot + Premium — 30k
   </div>
+  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
 <!-- SCRIPT -->
-<div class="card">
-  <span class="pill">Script Violet Evergreen</span>
-  <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-  <a class="btn" onclick="toggleList('script')">Lihat List Script</a>
-  <div id="script" class="list">
+<div id="script" class="page hidden">
+  <div class="list-box">
     No Update — 10k<br>
     Free Update — 15k<br>
     Reseller Script — 20k
   </div>
-</div>
-
+  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
 <footer>
-  © 2025 IPUNGG SHOP ✌️💦
+© 2025 IPUNGG SHOP • Open 24/7 WIB
 </footer>
 
 </div>
 </body>
-  </html>
+    </html>
