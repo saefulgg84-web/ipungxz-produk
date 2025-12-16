@@ -4,46 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IPUNGG SHOP</title>
-
 <style>
 *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
 body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb}
 .wrap{max-width:420px;margin:0 auto;padding:16px}
 
 /* WELCOME */
-#welcome{
-  position:fixed;inset:0;z-index:999;
-  background:linear-gradient(135deg,#1f2937,#0b1220);
-  display:flex;align-items:center;justify-content:center
-}
-.welcome-box{
-  max-width:360px;width:100%;margin:16px;padding:24px;
-  border-radius:26px;text-align:center;
-  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
-  border:1px solid rgba(255,255,255,.18)
-}
-.welcome-box img{
-  width:120px;height:120px;border-radius:50%;
-  object-fit:cover;margin-bottom:14px
-}
+#welcome{position:fixed;inset:0;z-index:999;background:linear-gradient(135deg,#1f2937,#0b1220);display:flex;align-items:center;justify-content:center}
+.welcome-box{max-width:360px;width:100%;margin:16px;padding:24px;border-radius:26px;text-align:center;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18)}
+.welcome-box img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:14px}
 .welcome-title{font-size:22px;font-weight:800}
 .welcome-name{font-size:26px;font-weight:900;margin-bottom:18px}
-.start-btn{
-  width:100%;padding:14px;border-radius:999px;
-  border:0;background:#e5e7eb;color:#0b1220;
-  font-weight:900;font-size:16px;cursor:pointer
-}
+.start-btn{width:100%;padding:14px;border-radius:999px;border:0;background:#e5e7eb;color:#0b1220;font-weight:900;font-size:16px;cursor:pointer}
 
 /* HEADER */
-.profile{
-  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:22px;
-  padding:18px;
-  text-align:center;
-  margin-bottom:16px;
-  position:relative
-}
+.profile{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:18px;text-align:center;margin-bottom:16px;position:relative}
 .avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .name{font-size:22px;font-weight:800}
@@ -51,59 +26,23 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 
 /* MENU */
 .menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
-.menu{
-  display:none;position:absolute;top:48px;right:16px;
-  background:#020617;border:1px solid #1e293b;
-  border-radius:14px;width:220px;padding:12px;z-index:10
-}
+.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:220px;padding:12px;z-index:10}
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
 /* CARD PRODUK */
-.card{
-  background: rgba(255,255,255,0.06);
-  border-radius: 18px;
-  padding: 12px;
-  margin-bottom: 14px;
-  text-align: center;
-}
-.card img{
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 8px;
-}
-.card h3{
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.card .btn{
-  width: 90%;
-  margin: 0 auto;
-}
+.card{background: rgba(255,255,255,0.06);border-radius: 18px;padding: 12px;margin-bottom: 14px;text-align: center}
+.card img{width: 100%;border-radius: 12px;margin-bottom: 8px}
+.card h3{font-size: 16px;font-weight: 700;margin-bottom: 8px}
+.card .btn{width:90%;margin:0 auto;padding:12px;border-radius:18px;border:none;background:rgba(255,255,255,.16);color:#e5e7eb;font-weight:900;cursor:pointer}
 
 /* LIST PRODUK */
-.list-box{
-  padding:0;
-}
-.list-box .btn{
-  display:block;
-  width:90%;
-  margin:6px auto;
-  padding:12px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.22);
-  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.08));
-  color:#e5e7eb;
-  font-weight:900;
-  text-align:left;
-  text-decoration:none;
-}
+.list-box{padding:0}
+.list-box .btn{display:block;width:90%;margin:6px auto;padding:12px;border-radius:18px;border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.08));color:#e5e7eb;font-weight:900;text-align:left;text-decoration:none}
 
 .back{text-align:center;margin-top:14px;font-weight:800;cursor:pointer;opacity:.8}
 footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
 </style>
-
 <script>
 function toggleMenu(){const m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
 function openPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");}
@@ -111,7 +50,6 @@ function backHome(){document.querySelectorAll(".page").forEach(p=>p.classList.ad
 function startSite(){document.getElementById("welcome").style.display="none";document.getElementById("bgm").play();}
 </script>
 </head>
-
 <body>
 
 <!-- AUDIO -->
@@ -155,39 +93,31 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 
   <!-- CARD PRODUK -->
   <div class="card">
-    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg" alt="Panel Pterodactyl">
+    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
     <h3>Panel Pterodactyl</h3>
     <button class="btn" onclick="openPage('panel')">Lihat List</button>
   </div>
 
   <div class="card">
-    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg" alt="Sewa Bot WhatsApp">
+    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
     <h3>Sewa Bot WhatsApp</h3>
     <button class="btn" onclick="openPage('bot')">Lihat List</button>
   </div>
 
   <div class="card">
-    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg" alt="Script Violet Evergreen">
+    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
     <h3>Script Violet Evergreen</h3>
     <button class="btn" onclick="openPage('script')">Lihat List</button>
   </div>
-
 </div>
 
 <!-- PANEL LIST -->
 <div id="panel" class="page hidden">
   <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%201GB" target="_blank">RAM 1GB — 1k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%202GB" target="_blank">RAM 2GB — 2k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%203GB" target="_blank">RAM 3GB — 3k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%204GB" target="_blank">RAM 4GB — 4k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%205GB" target="_blank">RAM 5GB — 5k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%206GB" target="_blank">RAM 6GB — 6k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%207GB" target="_blank">RAM 7GB — 7k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%208GB" target="_blank">RAM 8GB — 8k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%209GB" target="_blank">RAM 9GB — 9k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%20UNLI" target="_blank">RAM UNLI — 10k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Panel" target="_blank">Reseller Panel — 15k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201GB" target="_blank">RAM 1GB — 1k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%202GB" target="_blank">RAM 2GB — 2k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%203GB" target="_blank">RAM 3GB — 3k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%204GB" target="_blank">RAM 4GB — 4k — Chat Admin</a>
   </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
@@ -195,12 +125,8 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 <!-- BOT LIST -->
 <div id="bot" class="page hidden">
   <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Minggu" target="_blank">1 Minggu — 7k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Bulan" target="_blank">1 Bulan — 15k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%202%20Bulan" target="_blank">2 Bulan — 17k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%203%20Bulan" target="_blank">3 Bulan — 23k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Permanen" target="_blank">Permanen — 28k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Jadi%20Bot%20Premium" target="_blank">Jadi Bot + Premium — 30k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201Minggu" target="_blank">1 Minggu — 7k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201Bulan" target="_blank">1 Bulan — 15k — Chat Admin</a>
   </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
@@ -208,9 +134,8 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 <!-- SCRIPT LIST -->
 <div id="script" class="page hidden">
   <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20No%20Update" target="_blank">No Update — 10k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Free%20Update" target="_blank">Free Update — 15k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Script" target="_blank">Reseller Script — 20k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20NoUpdate" target="_blank">No Update — 10k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20FreeUpdate" target="_blank">Free Update — 15k — Chat Admin</a>
   </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
@@ -218,7 +143,6 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 <footer>
 © 2025 IPUNGG SHOP • Open 24/7 WIB
 </footer>
-
 </div>
 </body>
-                                                                                                                        </html>
+    </html>
