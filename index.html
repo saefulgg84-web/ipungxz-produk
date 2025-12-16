@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IPUNGG SHOP</title>
 <style>
-*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
-body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif;margin:0;padding:0}
+body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height:100vh}
 .wrap{max-width:420px;margin:0 auto;padding:16px}
 
 /* WELCOME */
@@ -26,7 +26,7 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 
 /* MENU */
 .menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
-.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:220px;padding:12px;z-index:10}
+.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:160px;padding:12px;z-index:10}
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
@@ -36,18 +36,22 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 .card h3{font-size: 16px;font-weight: 700;margin-bottom: 8px}
 .card .btn{width:90%;margin:0 auto;padding:12px;border-radius:18px;border:none;background:rgba(255,255,255,.16);color:#e5e7eb;font-weight:900;cursor:pointer}
 
-/* LIST PRODUK */
-.list-box{padding:0}
-.list-box .btn{display:block;width:90%;margin:6px auto;padding:12px;border-radius:18px;border:1px solid rgba(255,255,255,.22);background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.08));color:#e5e7eb;font-weight:900;text-align:left;text-decoration:none}
+/* MODAL */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999}
+.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:90%;max-width:400px;max-height:80vh;overflow-y:auto}
+.modal-content h3{margin-bottom:12px;font-size:16px;text-align:center}
+.modal-content .list-item{padding:10px 12px;margin-bottom:6px;background:#0b1220;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
+.modal-content .btn-chat{margin-top:12px;width:100%;padding:12px;border-radius:18px;background:#25d366;color:#fff;font-weight:700;text-align:center;text-decoration:none;display:block}
+.modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:700;text-align:center;cursor:pointer}
 
-.back{text-align:center;margin-top:14px;font-weight:800;cursor:pointer;opacity:.8}
+/* FOOTER */
 footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
 </style>
 <script>
 function toggleMenu(){const m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
-function openPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");}
-function backHome(){document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));document.getElementById("home").classList.remove("hidden");}
 function startSite(){document.getElementById("welcome").style.display="none";document.getElementById("bgm").play();}
+function openModal(id){document.getElementById(id).style.display="flex";}
+function closeModal(id){document.getElementById(id).style.display="none";}
 </script>
 </head>
 <body>
@@ -87,57 +91,64 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 <!-- HOME -->
 <div id="home" class="page">
 
-  <!-- Katalog Channel dan Payment -->
+  <!-- Channel & Payment -->
   <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel Information</a>
   <a class="btn" href="https://payment-ipungg.vercel.app/">💳 Payment</a>
 
-  <!-- CARD PRODUK -->
+  <!-- Card Produk -->
   <div class="card">
     <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
     <h3>Panel Pterodactyl</h3>
-    <button class="btn" onclick="openPage('panel')">Lihat List</button>
+    <button class="btn" onclick="openModal('modal-panel')">Lihat List</button>
   </div>
 
   <div class="card">
     <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
     <h3>Sewa Bot WhatsApp</h3>
-    <button class="btn" onclick="openPage('bot')">Lihat List</button>
+    <button class="btn" onclick="openModal('modal-bot')">Lihat List</button>
   </div>
 
   <div class="card">
     <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
     <h3>Script Violet Evergreen</h3>
-    <button class="btn" onclick="openPage('script')">Lihat List</button>
+    <button class="btn" onclick="openModal('modal-script')">Lihat List</button>
   </div>
 </div>
 
-<!-- PANEL LIST -->
-<div id="panel" class="page hidden">
-  <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201GB" target="_blank">RAM 1GB — 1k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%202GB" target="_blank">RAM 2GB — 2k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%203GB" target="_blank">RAM 3GB — 3k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%204GB" target="_blank">RAM 4GB — 4k — Chat Admin</a>
+<!-- MODAL PANEL -->
+<div id="modal-panel" class="modal">
+  <div class="modal-content">
+    <h3>List Panel Pterodactyl</h3>
+    <div class="list-item">RAM 1GB <span>1k</span></div>
+    <div class="list-item">RAM 2GB <span>2k</span></div>
+    <div class="list-item">RAM 3GB <span>3k</span></div>
+    <div class="list-item">RAM 4GB <span>4k</span></div>
+    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    <div class="btn-close" onclick="closeModal('modal-panel')">Tutup</div>
   </div>
-  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
-<!-- BOT LIST -->
-<div id="bot" class="page hidden">
-  <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201Minggu" target="_blank">1 Minggu — 7k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201Bulan" target="_blank">1 Bulan — 15k — Chat Admin</a>
+<!-- MODAL BOT -->
+<div id="modal-bot" class="modal">
+  <div class="modal-content">
+    <h3>Pilih Varian — SEWA BOT</h3>
+    <div class="list-item">SW Grup – 15 Hari <span>Rp4.000</span></div>
+    <div class="list-item">SW Grup – 30 Hari (Promo) <span>Rp3.000</span></div>
+    <div class="list-item">SW Grup – 60 Hari <span>Rp10.000</span></div>
+    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    <div class="btn-close" onclick="closeModal('modal-bot')">Tutup</div>
   </div>
-  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
-<!-- SCRIPT LIST -->
-<div id="script" class="page hidden">
-  <div class="list-box">
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20NoUpdate" target="_blank">No Update — 10k — Chat Admin</a>
-    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20FreeUpdate" target="_blank">Free Update — 15k — Chat Admin</a>
+<!-- MODAL SCRIPT -->
+<div id="modal-script" class="modal">
+  <div class="modal-content">
+    <h3>List Script Violet Evergreen</h3>
+    <div class="list-item">No Update <span>10k</span></div>
+    <div class="list-item">Free Update <span>15k</span></div>
+    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    <div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
   </div>
-  <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
 <footer>
@@ -145,4 +156,4 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 </footer>
 </div>
 </body>
-    </html>
+  </html>
