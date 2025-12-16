@@ -30,15 +30,13 @@ body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
-/* BUTTONS */
-.btn{
+/* BUTTONS / CARD PRODUK */
+.btn, .card-btn{
   display:flex;align-items:center;justify-content:center;
   width:100%;padding:16px;border-radius:18px;border:none;
   background:rgba(255,255,255,.16);color:#e5e7eb;font-weight:900;
   cursor:pointer;text-decoration:none;margin-bottom:12px;font-size:16px
 }
-
-/* CARD PRODUK */
 .card{background: rgba(255,255,255,0.06);border-radius: 18px;padding: 12px;margin-bottom: 14px;text-align: center}
 .card img{width: 100%;border-radius: 12px;margin-bottom: 8px}
 .card h3{font-size: 16px;font-weight: 700;margin-bottom: 8px}
@@ -48,7 +46,7 @@ body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height
 .modal-content{background:#1e293b;border-radius:18px;padding:16px;width:90%;max-width:400px;max-height:80vh;overflow-y:auto}
 .modal-content h3{margin-bottom:12px;font-size:16px;text-align:center}
 .modal-content .list-item{padding:10px 12px;margin-bottom:6px;background:#0b1220;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
-.modal-content .btn-chat{margin-top:12px;width:100%;padding:12px;border-radius:18px;background:#25d366;color:#fff;font-weight:700;text-align:center;text-decoration:none;display:block}
+.modal-content .btn-order{margin-top:12px;width:100%;padding:12px;border-radius:18px;background:#f59e0b;color:#fff;font-weight:700;text-align:center;text-decoration:none;display:block}
 .modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:700;text-align:center;cursor:pointer}
 
 /* FOOTER */
@@ -98,10 +96,10 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 
   <!-- Channel & Payment Horizontal -->
   <div style="display:flex;gap:12px;margin-bottom:14px">
-    <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o" style="flex:1;text-align:center;font-size:16px;padding:16px">
+    <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o" style="flex:1;padding:20px;font-size:18px;border-radius:22px;text-align:center;">
       📢 Channel
     </a>
-    <a class="btn" href="https://payment-ipungg.vercel.app/" style="flex:1;text-align:center;font-size:16px;padding:16px">
+    <a class="btn" href="https://payment-ipungg.vercel.app/" style="flex:1;padding:20px;font-size:18px;border-radius:22px;text-align:center;">
       💳 Payment
     </a>
   </div>
@@ -110,19 +108,19 @@ function closeModal(id){document.getElementById(id).style.display="none";}
   <div class="card">
     <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
     <h3>Panel Pterodactyl</h3>
-    <button class="btn" onclick="openModal('modal-panel')">Lihat List</button>
+    <button class="card-btn" onclick="openModal('modal-panel')">Lihat List</button>
   </div>
 
   <div class="card">
     <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
     <h3>Sewa Bot WhatsApp</h3>
-    <button class="btn" onclick="openModal('modal-bot')">Lihat List</button>
+    <button class="card-btn" onclick="openModal('modal-bot')">Lihat List</button>
   </div>
 
   <div class="card">
     <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
     <h3>Script Violet Evergreen</h3>
-    <button class="btn" onclick="openModal('modal-script')">Lihat List</button>
+    <button class="card-btn" onclick="openModal('modal-script')">Lihat List</button>
   </div>
 </div>
 
@@ -130,18 +128,18 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <div id="modal-panel" class="modal">
   <div class="modal-content">
     <h3>List Panel Pterodactyl</h3>
-    RAM 1GB — 1k<br>
-    RAM 2GB — 2k<br>
-    RAM 3GB — 3k<br>
-    RAM 4GB — 4k<br>
-    RAM 5GB — 5k<br>
-    RAM 6GB — 6k<br>
-    RAM 7GB — 7k<br>
-    RAM 8GB — 8k<br>
-    RAM 9GB — 9k<br>
-    RAM UNLI — 10k<br>
-    Reseller Panel — 15k<br>
-    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    RAM 1GB <span>1k</span><br>
+    RAM 2GB <span>2k</span><br>
+    RAM 3GB <span>3k</span><br>
+    RAM 4GB <span>4k</span><br>
+    RAM 5GB <span>5k</span><br>
+    RAM 6GB <span>6k</span><br>
+    RAM 7GB <span>7k</span><br>
+    RAM 8GB <span>8k</span><br>
+    RAM 9GB <span>9k</span><br>
+    RAM UNLI <span>10k</span><br>
+    Reseller Panel <span>15k</span><br>
+    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
     <div class="btn-close" onclick="closeModal('modal-panel')">Tutup</div>
   </div>
 </div>
@@ -149,14 +147,14 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <!-- MODAL BOT -->
 <div id="modal-bot" class="modal">
   <div class="modal-content">
-    <h3>Pilih Varian — SEWA BOT</h3>
-    1 Minggu — 7k<br>
-    1 Bulan — 15k<br>
-    2 Bulan — 17k<br>
-    3 Bulan — 23k<br>
-    Permanen — 28k<br>
-    Jadi Bot + Premium — 30k<br>
-    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    <h3>List Sewa Bot WhatsApp</h3>
+    1 Minggu <span>7k</span><br>
+    1 Bulan <span>15k</span><br>
+    2 Bulan <span>17k</span><br>
+    3 Bulan <span>23k</span><br>
+    Permanen <span>28k</span><br>
+    Jadi Bot + Premium <span>30k</span><br>
+    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
     <div class="btn-close" onclick="closeModal('modal-bot')">Tutup</div>
   </div>
 </div>
@@ -165,10 +163,10 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <div id="modal-script" class="modal">
   <div class="modal-content">
     <h3>List Script Violet Evergreen</h3>
-    No Update — 10k<br>
-    Free Update — 15k<br>
-    Reseller Script — 20k<br>
-    <a class="btn-chat" href="https://wa.me/6283840810226" target="_blank">Chat via WhatsApp</a>
+    No Update <span>10k</span><br>
+    Free Update <span>15k</span><br>
+    Reseller Script <span>20k</span><br>
+    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
     <div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
   </div>
 </div>
