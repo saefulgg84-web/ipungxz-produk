@@ -6,8 +6,8 @@
 <title>IPUNGG SHOP</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:#e5e7eb}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#0f172a;color:#e5e7eb}
 .container{max-width:420px;margin:auto;padding:16px}
 
 .card{
@@ -18,55 +18,55 @@ padding:14px;
 margin-bottom:12px
 }
 
+.center{text-align:center}
 .logo{
-width:90px;height:90px;
-border-radius:50%;
-margin:auto;
-overflow:hidden
+width:90px;height:90px;border-radius:50%;
+margin:auto;overflow:hidden
 }
 .logo img{width:100%;height:100%;object-fit:cover}
 
-.center{text-align:center}
-.title{font-size:20px;font-weight:800;margin-top:10px}
+.title{font-size:18px;font-weight:800;margin-top:8px}
 .desc{font-size:13px;opacity:.8;margin-top:4px}
 
 .tab{
-display:flex;
-gap:8px;
-margin-top:14px
+display:flex;gap:8px;margin-top:12px
 }
-.tab a{
-flex:1;
-padding:10px;
-border-radius:999px;
-text-align:center;
-text-decoration:none;
-font-weight:700;
-background:#1e293b;
-color:#e5e7eb
+.tab button{
+flex:1;padding:10px;border-radius:999px;
+border:0;background:#1e293b;color:#e5e7eb;
+font-weight:700;cursor:pointer
 }
 
 .btn{
-display:block;
-width:100%;
-margin-top:10px;
-padding:12px;
-border-radius:999px;
-background:#e5e7eb;
-color:#020617;
-text-align:center;
-font-weight:800;
-text-decoration:none
+width:100%;padding:11px;margin-top:10px;
+border-radius:999px;border:0;
+background:#e5e7eb;color:#020617;
+font-weight:800;cursor:pointer
 }
 
 .list{
+display:none;
 margin-top:10px;
 font-size:14px;
-line-height:1.7
+line-height:1.7;
+border-top:1px solid #1e293b;
+padding-top:10px
 }
 
 img{width:100%;border-radius:12px;margin:10px 0}
 </style>
+
+<script>
+function toggle(id){
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
+
+function showPayment(id){
+  document.querySelectorAll('.pay').forEach(e=>e.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+</script>
 </head>
 
 <body>
@@ -81,8 +81,8 @@ img{width:100%;border-radius:12px;margin:10px 0}
   <div class="desc">Panel • Sewa Bot • Script</div>
 
   <div class="tab">
-    <a href="#produk">Produk</a>
-    <a href="#payment">Payment</a>
+    <button onclick="toggle('produk')">Produk</button>
+    <button onclick="toggle('payment')">Payment</button>
   </div>
 </div>
 
@@ -93,65 +93,82 @@ img{width:100%;border-radius:12px;margin:10px 0}
 <div class="card">
   <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
   <div class="title">Panel Pterodactyl</div>
-  <a class="btn" href="#panel">Lihat List</a>
-</div>
+  <button class="btn" onclick="toggle('panel')">Lihat List</button>
 
-<div id="panel" class="card">
-  <div class="title">List Panel</div>
-  <div class="list">
+  <div id="panel" class="list">
     RAM 1GB — 1k<br>
     RAM 2GB — 2k<br>
     RAM 3GB — 3k<br>
     RAM 4GB — 4k<br>
     RAM UNLI — 10k<br>
-    Reseller — 15k
+    Reseller Panel — 15k
+    <br><br>
+    <button class="btn" onclick="location.href='https://wa.me/6283840810226'">
+      Order Panel
+    </button>
   </div>
-  <a class="btn" href="https://wa.me/6283840810226">Order</a>
 </div>
 
 <!-- SEWA BOT -->
 <div class="card">
   <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
   <div class="title">Sewa Bot</div>
-  <a class="btn" href="#sewa">Lihat List</a>
-</div>
+  <button class="btn" onclick="toggle('sewa')">Lihat List</button>
 
-<div id="sewa" class="card">
-  <div class="title">List Sewa Bot</div>
-  <div class="list">
+  <div id="sewa" class="list">
     1 Minggu — 7k<br>
     1 Bulan — 15k<br>
     2 Bulan — 17k<br>
     3 Bulan — 23k<br>
     Permanen — 28k<br>
     Jadi Bot + Premium — 30k
+    <br><br>
+    <button class="btn" onclick="location.href='https://wa.me/6283840810226'">
+      Order Sewa Bot
+    </button>
   </div>
-  <a class="btn" href="https://wa.me/6283840810226">Order</a>
 </div>
 
 <!-- SCRIPT -->
 <div class="card">
   <img src="https://files.catbox.moe/f6afx2.jpg">
   <div class="title">Script Violet Evergreen</div>
-  <div class="list">
+  <button class="btn" onclick="toggle('script')">Lihat List</button>
+
+  <div id="script" class="list">
     No Update — 10k<br>
     Free Update — 15k<br>
-    Reseller — 20k
+    Reseller Script — 20k
+    <br><br>
+    <button class="btn" onclick="location.href='https://wa.me/6283840810226'">
+      Order Script
+    </button>
   </div>
-  <a class="btn" href="https://wa.me/6283840810226">Order</a>
 </div>
 
 </div>
 
 <!-- PAYMENT -->
-<div id="payment" class="card">
+<div id="payment" class="card" style="display:none">
   <div class="title center">Payment</div>
-  <img src="https://files.catbox.moe/pwcqww.png">
-  <div class="list center">
-    GOPAY: 083840810226<br>
-    DANA: 08131159010
+
+  <!-- MENU PAYMENT -->
+  <button class="btn" onclick="showPayment('qris')">QRIS</button>
+  <button class="btn" onclick="showPayment('gopay')">GOPAY</button>
+  <button class="btn" onclick="showPayment('dana')">DANA</button>
+
+  <!-- ISI PAYMENT -->
+  <div id="qris" class="list pay">
+    <img src="https://files.catbox.moe/pwcqww.png">
   </div>
-  <a class="btn" href="https://wa.me/6283840810226">Konfirmasi</a>
+
+  <div id="gopay" class="list pay">
+    GOPAY<br>083840810226
+  </div>
+
+  <div id="dana" class="list pay">
+    DANA<br>08131159010
+  </div>
 </div>
 
 </div>
