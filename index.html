@@ -6,62 +6,71 @@
 <title>IPUNGG SHOP</title>
 <style>
 *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif;margin:0;padding:0}
-body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height:100vh;transition:background 0.5s;}
-.wrap{max-width:420px;margin:0 auto;padding:16px}
+body{color:#e5e7eb;min-height:100vh;overflow-x:hidden;font-weight:900;position:relative;background:linear-gradient(135deg,#1f2937,#0b1220);animation:gradMove 30s linear infinite;transition:background 0.5s}
 
-/* WELCOME */
-#welcome{position:fixed;inset:0;z-index:999;background:linear-gradient(135deg,#1f2937,#0b1220);display:flex;align-items:center;justify-content:center;animation:fadeIn 1s}
-.welcome-box{max-width:360px;width:100%;margin:16px;padding:24px;border-radius:26px;text-align:center;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18);animation:slideIn 0.8s}
-.welcome-box img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:14px;animation:fadeIn 1.2s}
-.welcome-title{font-size:22px;font-weight:800;animation:fadeIn 1.5s}
-.welcome-name{font-size:26px;font-weight:900;margin-bottom:18px;animation:fadeIn 1.6s}
-.start-btn{width:100%;padding:14px;border-radius:999px;border:0;background:#e5e7eb;color:#0b1220;font-weight:900;font-size:16px;cursor:pointer;transition:all 0.3s;}
-.start-btn:hover{background:#fbbf24;color:#1f1220;transform:scale(1.05)}
+/* Gradient Background Animasi */
+@keyframes gradMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+body{background-size:200% 200%;}
 
-/* HEADER */
+/* Hero / Welcome */
+#welcome{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;animation:fadeIn 1s}
+#welcome::before{content:"";position:absolute;inset:0;background:radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);animation:moveBG 20s linear infinite}
+.welcome-box{position:relative;max-width:360px;width:100%;margin:16px;padding:24px;border-radius:26px;text-align:center;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18);overflow:hidden}
+.welcome-box img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:14px}
+.welcome-title{font-size:22px;font-weight:900;}
+.welcome-name{font-size:26px;font-weight:900;margin-bottom:8px;}
+.welcome-sub{opacity:.8;margin-bottom:18px;font-weight:700;}
+.start-btn{width:100%;padding:14px;border-radius:999px;border:0;background:#fbbf24;color:#0b1220;font-weight:900;font-size:16px;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.start-btn:hover{transform:scale(1.05);background:#f59e0b}
+
+/* Header */
 .profile{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:18px;text-align:center;margin-bottom:16px;position:relative;box-shadow:0 4px 8px rgba(0,0,0,0.2)}
 .avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover}
-.name{font-size:22px;font-weight:800}
-.tag{opacity:.8;font-size:13px}
+.name{font-size:22px;font-weight:900}
+.tag{opacity:.8;font-size:13px;font-weight:700}
 
-/* MENU */
-.menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
-.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:160px;padding:12px;z-index:10;animation:fadeIn 0.3s}
+/* Menu */
+.menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer;z-index:20}
+.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:160px;padding:12px;z-index:10;}
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
-/* BUTTONS / CARD PRODUK */
-.card{background: rgba(255,255,255,0.06);border-radius: 18px;padding: 12px;margin-bottom: 14px;text-align: center;box-shadow: 0 4px 8px rgba(0,0,0,0.2);transition: transform 0.3s, box-shadow 0.3s;}
-.card:hover{transform: scale(1.03);box-shadow:0 8px 16px rgba(0,0,0,0.3);}
-.card img{width: 100%;border-radius: 12px;margin-bottom: 8px}
-.card h3{font-size: 16px;font-weight: 700;margin-bottom: 8px}
+/* Cards Produk */
+.card{background: rgba(255,255,255,0.06);border-radius: 18px;padding: 12px;margin-bottom: 14px;text-align: center;box-shadow: 0 4px 12px rgba(0,0,0,0.2);transition: transform 0.3s, box-shadow 0.3s;position:relative;overflow:hidden;}
+.card:hover{transform: scale(1.03);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+.card img{width: 100%;border-radius: 12px;margin-bottom: 8px;transition: transform 0.3s;}
+.card img:hover{transform: scale(1.05);}
+.card h3{font-size:16px;font-weight:900;margin-bottom:8px;}
+.badge{position:absolute;top:8px;left:8px;background:#f59e0b;color:#fff;padding:2px 6px;border-radius:8px;font-size:12px;font-weight:900}
+
+/* Card Buttons */
 .card-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;border-radius:18px;border:none;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff;font-weight:900;cursor:pointer;text-decoration:none;margin-bottom:12px;font-size:16px;transition:all 0.3s}
 .card-btn:hover{transform:scale(1.05);background:linear-gradient(135deg,#fcd34d,#f59e0b);}
 
-/* MODAL */
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999;animation:fadeIn 0.4s}
-.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:95%;max-width:400px;max-height:80vh;overflow-y:auto}
-.modal-content h3{margin-bottom:12px;font-size:16px;text-align:center}
+/* Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);justify-content:center;align-items:center;z-index:9999;}
+.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:95%;max-width:400px;max-height:80vh;overflow-y:auto;font-weight:700}
+.modal-content h3{margin-bottom:12px;font-size:16px;text-align:center;font-weight:900}
 .modal-content table{width:100%;border-collapse:collapse;margin-bottom:12px}
-.modal-content th, .modal-content td{padding:8px;text-align:left;border-bottom:1px solid #374151;color:#e5e7eb}
-.modal-content td .btn-order{padding:6px 10px;font-size:14px}
+.modal-content th, .modal-content td{padding:8px;text-align:left;border-bottom:1px solid #374151;color:#e5e7eb;font-weight:700}
+.modal-content td .btn-order{padding:6px 10px;font-size:14px;font-weight:900}
 .modal-content .btn-order{background:#f59e0b;color:#fff;border:none;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-block;transition: all 0.3s ease;}
 .modal-content td .btn-order:hover{background: linear-gradient(135deg,#fbbf24,#f59e0b); transform: scale(1.08);}
-.modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:700;text-align:center;cursor:pointer;transition:all 0.3s}
-.modal-content .btn-close:hover{background:#4b5563;}
+.modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:900;text-align:center;cursor:pointer;transition:all 0.3s}
+.modal-content .btn-close:hover{background:#4b5563}
 
 /* Channel & Payment Horizontal */
 .channel-payment{display:flex;gap:12px;margin-bottom:14px}
-.channel-payment a{flex:1;padding:20px;font-size:18px;border-radius:22px;text-align:center;display:inline-block;background:linear-gradient(135deg,#3b82f6,#60a5fa);text-decoration:none;color:#fff;font-weight:700;transition:all 0.3s}
+.channel-payment a{flex:1;padding:20px;font-size:18px;border-radius:22px;text-align:center;display:inline-block;background:linear-gradient(135deg,#3b82f6,#60a5fa);text-decoration:none;color:#fff;font-weight:900;transition:all 0.3s}
 .channel-payment a:hover{transform:scale(1.03);background:linear-gradient(135deg,#60a5fa,#3b82f6)}
 
-/* FOOTER */
-footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
+footer{opacity:.7;text-align:center;font-size:12px;font-weight:700;margin-top:18px}
 
-/* Animations */
+/* Animasi */
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideIn{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes moveBG{0%{background-position:0 0}100%{background-position:2000px 2000px}}
 </style>
 <script>
 function toggleMenu(){const m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
@@ -75,19 +84,20 @@ function closeModal(id){document.getElementById(id).style.display="none";}
   <source src="https://raw.githubusercontent.com/zionjs0/whatsapp-media/main/file_1765856657376.mp3" type="audio/mpeg">
 </audio>
 
-<!-- WELCOME -->
+<!-- Welcome -->
 <div id="welcome">
   <div class="welcome-box">
     <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
     <div class="welcome-title">WELCOME TO WEBSITE</div>
     <div class="welcome-name">IPUNGG SHOP</div>
+    <div class="welcome-sub">Panel • Bot • Script • Rename</div>
     <button class="start-btn" onclick="startSite()">Start Now</button>
   </div>
 </div>
 
 <div class="wrap">
 
-<!-- HEADER -->
+<!-- Header -->
 <div class="profile">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div id="menu" class="menu">
@@ -101,111 +111,40 @@ function closeModal(id){document.getElementById(id).style.display="none";}
   <div class="tag">Panel • Sewa Bot • Script • Rename</div>
 </div>
 
-<!-- HOME -->
-<div id="home">
-
-  <!-- Channel & Payment Horizontal -->
-  <div class="channel-payment">
-    <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel</a>
-    <a href="https://payment-ipungg.vercel.app/">💳 Payment</a>
-  </div>
-
-  <!-- Produk Cards -->
-  <div class="card">
-    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-    <h3>Panel Pterodactyl</h3>
-    <button class="card-btn" onclick="openModal('modal-panel')">Lihat List</button>
-  </div>
-
-  <div class="card">
-    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-    <h3>Sewa Bot WhatsApp</h3>
-    <button class="card-btn" onclick="openModal('modal-bot')">Lihat List</button>
-  </div>
-
-  <div class="card">
-    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-    <h3>Script Violet Evergreen</h3>
-    <button class="card-btn" onclick="openModal('modal-script')">Lihat List</button>
-  </div>
-
-  <div class="card">
-    <img src="https://files.catbox.moe/isqlpn.jpg">
-    <h3>Rename Script</h3>
-    <button class="card-btn" onclick="openModal('modal-rename')">Lihat List</button>
-  </div>
-
+<!-- Channel & Payment -->
+<div class="channel-payment">
+  <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel</a>
+  <a href="https://payment-ipungg.vercel.app/">💳 Payment</a>
 </div>
 
-<!-- MODAL (sama seperti sebelumnya, untuk semua produk) -->
-<!-- Panel Modal -->
-<div id="modal-panel" class="modal">
-  <div class="modal-content">
-    <h3>List Panel Pterodactyl</h3>
-    <table>
-      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
-      <tr><td>RAM 1GB</td><td>1k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 2GB</td><td>2k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 3GB</td><td>3k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 4GB</td><td>4k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 5GB</td><td>5k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 6GB</td><td>6k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 7GB</td><td>7k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 8GB</td><td>8k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM 9GB</td><td>9k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>RAM UNLI</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Reseller Panel</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-    </table>
-    <div class="btn-close" onclick="closeModal('modal-panel')">Tutup</div>
-  </div>
+<!-- Produk Cards -->
+<div class="card">
+  <div class="badge">Hot</div>
+  <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+  <h3>Panel Pterodactyl</h3>
+  <button class="card-btn" onclick="openModal('modal-panel')">Lihat List</button>
 </div>
 
-<!-- Bot Modal -->
-<div id="modal-bot" class="modal">
-  <div class="modal-content">
-    <h3>List Sewa Bot WhatsApp</h3>
-    <table>
-      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
-      <tr><td>1 Minggu</td><td>7k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>1 Bulan</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>2 Bulan</td><td>17k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>3 Bulan</td><td>23k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Permanen</td><td>28k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Jadi Bot + Premium</td><td>30k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-    </table>
-    <div class="btn-close" onclick="closeModal('modal-bot')">Tutup</div>
-  </div>
+<div class="card">
+  <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+  <h3>Sewa Bot WhatsApp</h3>
+  <button class="card-btn" onclick="openModal('modal-bot')">Lihat List</button>
 </div>
 
-<!-- Script Modal -->
-<div id="modal-script" class="modal">
-  <div class="modal-content">
-    <h3>List Script Violet Evergreen</h3>
-    <table>
-      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
-      <tr><td>No Update</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Free Update</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Reseller Script</td><td>20k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-    </table>
-    <div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
-  </div>
+<div class="card">
+  <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+  <h3>Script Violet Evergreen</h3>
+  <button class="card-btn" onclick="openModal('modal-script')">Lihat List</button>
 </div>
 
-<!-- Rename Modal -->
-<div id="modal-rename" class="modal">
-  <div class="modal-content">
-    <h3>List Rename Script</h3>
-    <table>
-      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
-      <tr><td>Rename Biasa</td><td>5k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-      <tr><td>Full Rename</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
-    </table>
-    <div class="btn-close" onclick="closeModal('modal-rename')">Tutup</div>
-  </div>
+<div class="card">
+  <div class="badge">New</div>
+  <img src="https://files.catbox.moe/isqlpn.jpg">
+  <h3>Rename Script</h3>
+  <button class="card-btn" onclick="openModal('modal-rename')">Lihat List</button>
 </div>
 
-<footer>
-© 2025 IPUNGG SHOP • Open 24/7 WIB
-</footer>
+<footer>© 2025 IPUNGG SHOP • Open 24/7 WIB</footer>
+</div>
 </body>
-  </html>
+</html>
