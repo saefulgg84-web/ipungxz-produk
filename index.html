@@ -3,76 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IPUNGG SHOP</title>
+  <title>IPUNGG SHOP — Catalog</title>
   <style>
-    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
-    body { margin: 0; background: linear-gradient(180deg,#020617,#0f172a); color: #e5e7eb; }
-    header { padding: 20px; text-align: center; border-bottom: 1px solid #1e293b; }
-    header h1 { margin: 0; font-size: 26px; color: #38bdf8; }
-    header p { margin-top: 6px; font-size: 14px; color: #94a3b8; }
+    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+    body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb}
+    .wrap{max-width:420px;margin:0 auto;padding:16px}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
+    .profile,.card{
+      background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:22px;
+      padding:18px;
+      margin-bottom:16px;
+      text-align:center;
     }
 
-    .card {
-      background: #020617;
-      border: 1px solid #1e293b;
-      border-radius: 14px;
-      padding: 16px;
+    .avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;background:#111827;
+      display:flex;align-items:center;justify-content:center;font-weight:900;color:#38bdf8}
+
+    .name{font-size:22px;font-weight:800}
+    .tag{opacity:.8;font-size:13px}
+
+    .btn{
+      display:block;width:100%;padding:12px;border-radius:999px;
+      border:0;background:#e5e7eb;color:#0b1220;
+      font-weight:800;text-decoration:none;margin-top:10px
     }
+    .btn.alt{background:transparent;color:#e5e7eb;border:1px solid rgba(255,255,255,.25)}
 
-    .card h3 { margin: 0 0 8px; color: #38bdf8; }
-    .price { font-weight: bold; margin-bottom: 6px; }
-    .desc { font-size: 13px; color: #94a3b8; margin-bottom: 12px; }
+    .pill{display:inline-block;padding:6px 12px;border-radius:999px;
+      background:rgba(255,255,255,.18);font-size:12px;margin-bottom:8px}
 
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      background: #38bdf8;
-      color: #020617;
-      font-weight: bold;
-    }
+    .title{font-size:20px;font-weight:800;margin:8px 0}
+    .desc{font-size:14px;line-height:1.6;opacity:.9}
+    .price{font-size:20px;font-weight:900;margin:14px 0}
 
-    footer { text-align: center; padding: 16px; font-size: 13px; color: #94a3b8; }
+    img{max-width:100%;border-radius:16px;margin:10px 0}
+
+    footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
   </style>
 </head>
 <body>
+<div class="wrap">
 
-<header>
-  <h1>🛍️ IPUNGG SHOP</h1>
-  <p>Panel Bot & Digital Service • Fast • Murah • Trusted</p>
-</header>
+  <!-- HOME -->
+  <div class="profile">
+    <div class="avatar">IP</div>
+    <div class="name">IPUNGG SHOP</div>
+    <div class="tag">Panel • Sewa Bot • Digital Service</div>
 
-<main class="container">
-  <!-- PANEL RAM -->
-  <div class="card"><h3>Panel RAM 1GB</h3><div class="price">Rp1.000</div><div class="desc">Bot ringan & testing</div><a class="btn" href="https://wa.me/6283840810226">Beli</a></div>
-  <div class="card"><h3>Panel RAM 2GB</h3><div class="price">Rp2.000</div><div class="desc">Bot standar stabil</div><a class="btn" href="https://wa.me/6283840810226">Beli</a></div>
-  <div class="card"><h3>Panel RAM 3GB</h3><div class="price">Rp3.000</div><div class="desc">Performa hemat</div><a class="btn" href="https://wa.me/6283840810226">Beli</a></div>
-  <div class="card"><h3>Panel RAM 4GB</h3><div class="price">Rp4.000</div><div class="desc">Bot aktif & stabil</div><a class="btn" href="https://wa.me/6283840810226">Beli</a></div>
-  <div class="card"><h3>Panel RAM Unlimited</h3><div class="price">Rp10.000</div><div class="desc">Tanpa batas RAM</div><a class="btn" href="https://wa.me/6283840810226">Beli</a></div>
+    <a class="btn alt" href="#product">Product</a>
+    <a class="btn alt" href="#payment">Payments</a>
+  </div>
 
-  <!-- SEWA BOT -->
-  <div class="card"><h3>Sewa Bot 1 Minggu</h3><div class="price">Rp7.000</div><div class="desc">Akses 7 hari</div><a class="btn" href="https://wa.me/6283840810226">Sewa</a></div>
-  <div class="card"><h3>Sewa Bot 1 Bulan</h3><div class="price">Rp15.000</div><div class="desc">Akses 1 bulan</div><a class="btn" href="https://wa.me/6283840810226">Sewa</a></div>
-  <div class="card"><h3>Sewa Bot 2 Bulan</h3><div class="price">Rp17.000</div><div class="desc">Akses 2 bulan</div><a class="btn" href="https://wa.me/6283840810226">Sewa</a></div>
-  <div class="card"><h3>Sewa Bot 3 Bulan</h3><div class="price">Rp23.000</div><div class="desc">Akses 3 bulan</div><a class="btn" href="https://wa.me/6283840810226">Sewa</a></div>
-  <div class="card"><h3>Sewa Bot Permanen</h3><div class="price">Rp28.000</div><div class="desc">Akses permanen</div><a class="btn" href="https://wa.me/6283840810226">Sewa</a></div>
-  <div class="card"><h3>Jadi Bot + Premium</h3><div class="price">Rp30.000</div><div class="desc">Bot pribadi + premium</div><a class="btn" href="https://t.me/ipung_brye">Order</a></div>
-</main>
+  <!-- PRODUCTS -->
+  <div id="product">
 
-<footer>
-  © 2025 IPUNGG SHOP • Open 24/7 WIB
-</footer>
+    <!-- PANEL -->
+    <div class="card">
+      <span class="pill">Panel</span>
+      <div class="title">Panel Pterodactyl</div>
+      <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+      <div class="desc">
+        Panel unlimited berbasis Pterodactyl untuk deploy bot, API & hosting.
+      </div>
+      <a class="btn alt" href="https://wa.me/6283840810226">
+        Lihat Semua List Panel
+      </a>
+    </div>
 
+    <!-- SEWA BOT -->
+    <div class="card">
+      <span class="pill">Sewa Bot</span>
+      <div class="title">Sewa Bot WhatsApp</div>
+      <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+      <div class="desc">
+        Anti delay • Fast respon • Aktif 24 jam • Cocok untuk store & kebutuhan lainnya.
+      </div>
+      <a class="btn alt" href="https://wa.me/6283840810226">
+        Lihat Semua List Sewa Bot
+      </a>
+    </div>
+
+    <!-- SCRIPT -->
+    <div class="card">
+      <span class="pill">Script</span>
+      <div class="title">Violet Evergreen</div>
+      <img src="https://files.catbox.moe/f6afx2.jpg">
+      <div class="desc">
+        • No Update: 10k<br>
+        • Free Update: 15k<br>
+        • Reseller Script: 20k
+      </div>
+      <a class="btn" href="https://wa.me/6283840810226">
+        Order Script
+      </a>
+    </div>
+
+  </div>
+
+  <!-- PAYMENTS -->
+  <div id="payment">
+    <div class="card">
+      <div class="title">List Payment</div>
+
+      <img src="https://files.catbox.moe/pwcqww.png">
+
+      <div class="desc">
+        <b>GoPay:</b> 083840810226<br>
+        <b>Dana:</b> 08131159010
+      </div>
+
+      <a class="btn alt" href="https://wa.me/6283840810226">
+        Konfirmasi Admin
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 IPUNGG SHOP • Open 24/7 WIB
+  </footer>
+
+</div>
 </body>
   </html>
-                      
