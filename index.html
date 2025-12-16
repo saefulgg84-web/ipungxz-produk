@@ -1,180 +1,180 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IPUNGG SHOP — Catalog Product</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPUNGG SHOP</title>
 
-  <style>
-    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
-    body{
-      margin:0;
-      min-height:100vh;
-      background:linear-gradient(135deg,#1f2937,#0b1220);
-      color:#e5e7eb
-    }
-    .wrap{max-width:420px;margin:0 auto;padding:16px}
+<style>
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#1f2937,#0b1220);
+  color:#e5e7eb
+}
+.wrap{max-width:420px;margin:0 auto;padding:16px;position:relative}
 
-    .profile{
-      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:22px;
-      padding:18px;
-      text-align:center;
-      margin-bottom:16px
-    }
-    .avatar{
-      width:96px;height:96px;border-radius:50%;
-      margin:0 auto 10px;overflow:hidden
-    }
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .name{font-size:22px;font-weight:800}
-    .tag{opacity:.8;font-size:13px;margin-top:2px}
+/* HEADER */
+.profile{
+  background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:22px;
+  padding:18px;
+  text-align:center;
+  margin-bottom:16px;
+  position:relative
+}
+.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.name{font-size:22px;font-weight:800}
+.tag{opacity:.8;font-size:13px;margin-top:2px}
 
-    .btn{
-      display:block;width:100%;
-      padding:12px 14px;
-      border-radius:999px;
-      border:0;
-      background:#e5e7eb;
-      color:#0b1220;
-      font-weight:800;
-      text-decoration:none;
-      margin-top:10px;
-      text-align:center
-    }
-    .btn.alt{
-      background:transparent;
-      color:#e5e7eb;
-      border:1px solid rgba(255,255,255,.25)
-    }
+/* HAMBURGER */
+.menu-btn{
+  position:absolute;
+  top:14px;
+  right:16px;
+  font-size:22px;
+  cursor:pointer;
+  user-select:none
+}
 
-    .section{margin-top:14px}
-    .card{
-      background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:22px;
-      padding:16px;
-      margin-bottom:14px
-    }
-    .pill{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.18);
-      font-size:12px;
-      margin-bottom:8px
-    }
-    .title{font-size:20px;font-weight:800;margin:6px 0}
-    .desc{font-size:14px;line-height:1.6;opacity:.9}
+.menu{
+  display:none;
+  position:absolute;
+  top:50px;
+  right:16px;
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:14px;
+  width:220px;
+  padding:12px;
+  z-index:10
+}
+.menu a{
+  display:block;
+  padding:10px;
+  border-radius:10px;
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:700
+}
+.menu a:hover{background:#1e293b}
 
-    footer{
-      opacity:.7;
-      text-align:center;
-      font-size:12px;
-      margin-top:18px
-    }
+/* BUTTON */
+.btn{
+  display:block;width:100%;
+  padding:12px 14px;
+  border-radius:999px;
+  border:0;
+  background:#e5e7eb;
+  color:#0b1220;
+  font-weight:800;
+  text-decoration:none;
+  margin-top:10px;
+  text-align:center
+}
 
-    img{width:100%;border-radius:16px;margin:10px 0}
-  </style>
+.section{margin-top:14px}
+.card{
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:22px;
+  padding:16px;
+  margin-bottom:14px
+}
+.pill{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  font-size:12px;
+  margin-bottom:8px
+}
+.title{font-size:20px;font-weight:800;margin:6px 0}
+.desc{font-size:14px;line-height:1.6;opacity:.9}
+img{width:100%;border-radius:16px;margin:10px 0}
+
+footer{
+  opacity:.7;
+  text-align:center;
+  font-size:12px;
+  margin-top:18px
+}
+</style>
+
+<script>
+function toggleMenu(){
+  const m = document.getElementById("menu");
+  m.style.display = m.style.display === "block" ? "none" : "block";
+}
+</script>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- PROFILE -->
-  <div class="profile">
-    <div class="avatar">
-      <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
-    </div>
-    <div class="name">IPUNGG SHOP</div>
-    <div class="tag">Panel • Sewa Bot • Digital Service</div>
+<!-- HEADER -->
+<div class="profile">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <a class="btn alt" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">Channel</a>
-    <a class="btn alt" href="https://t.me/ipung_brye">Telegram</a>
-    <a class="btn" href="#info">Info Kontak</a>
-    <a class="btn" href="#product">Produk</a>
-    <a class="btn" href="#dashboard-payment">Payment</a>
+  <div id="menu" class="menu">
+    <strong>📌 Info Bantuan</strong>
+    <a href="https://wa.me/6283840810226">WhatsApp Admin</a>
+    <a href="https://t.me/ipung_brye">Telegram Admin</a>
   </div>
 
-  <!-- INFO KONTAK -->
-  <div id="info" class="section">
-    <div class="card">
-      <div class="title">📞 Info Kontak</div>
-      <div class="desc">
-        WhatsApp:<br>
-        <a href="https://wa.me/6283840810226" class="btn">wa.me/6283840810226</a>
-        Telegram:<br>
-        <a href="https://t.me/ipung_brye" class="btn alt">t.me/ipung_brye</a>
-      </div>
-    </div>
+  <div class="avatar">
+    <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
   </div>
-
-  <!-- PRODUK -->
-  <div id="product" class="section">
-
-    <div class="card">
-      <span class="pill">Panel Pterodactyl</span>
-      <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-      <div class="title">Panel Pterodactyl</div>
-      <div class="desc">Klik untuk melihat semua list panel & reseller.</div>
-      <a class="btn" href="https://wa.me/6283840810226">Lihat List Panel</a>
-    </div>
-
-    <div class="card">
-      <span class="pill">Sewa Bot</span>
-      <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-      <div class="title">Sewa Bot WhatsApp</div>
-      <div class="desc">
-        1 Minggu • 1 Bulan • 2 Bulan<br>
-        3 Bulan • Permanen • Jadi Bot + Premium
-      </div>
-      <a class="btn" href="https://wa.me/6283840810226">Lihat List Sewa Bot</a>
-    </div>
-
-    <div class="card">
-      <span class="pill">Script Bot</span>
-      <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-      <div class="title">Script Violet Evergreen</div>
-      <div class="desc">
-        • No Update: 10k<br>
-        • Free Update: 15k<br>
-        • Reseller Script: 20k
-      </div>
-      <a class="btn" href="https://wa.me/6283840810226">Order Script</a>
-    </div>
-
-  </div>
+  <div class="name">IPUNGG SHOP</div>
+  <div class="tag">Panel • Sewa Bot • Script</div>
 
   <!-- PAYMENT -->
-  <div id="dashboard-payment" class="section">
-    <div class="card">
-      <div class="title">💳 Payment</div>
+  <a class="btn" href="https://payment-ipungg.vercel.app/">Payment</a>
+</div>
 
-      <div class="card">
-        <div class="title">QRIS</div>
-        <img src="https://files.catbox.moe/pwcqww.png">
-      </div>
+<!-- PRODUK -->
+<div class="section">
 
-      <div class="card">
-        <div class="title">GOPAY</div>
-        <div class="desc">083840810226</div>
-      </div>
-
-      <div class="card">
-        <div class="title">DANA</div>
-        <div class="desc">08131159010</div>
-      </div>
-
-      <a class="btn" href="https://wa.me/6283840810226">Konfirmasi Pembayaran</a>
-    </div>
+  <div class="card">
+    <span class="pill">Panel Pterodactyl</span>
+    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+    <div class="title">Panel Pterodactyl</div>
+    <div class="desc">Layanan panel Pterodactyl berbagai RAM & reseller.</div>
+    <a class="btn" href="https://wa.me/6283840810226">Order Panel</a>
   </div>
 
-  <footer>
-    “Fast • Murah • Trusted”<br>
-    © 2025 IPUNGG SHOP • Open 24/7 WIB
-  </footer>
+  <div class="card">
+    <span class="pill">Sewa Bot</span>
+    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+    <div class="title">Sewa Bot WhatsApp</div>
+    <div class="desc">
+      1 Minggu • 1 Bulan • 2 Bulan<br>
+      3 Bulan • Permanen • Jadi Bot + Premium
+    </div>
+    <a class="btn" href="https://wa.me/6283840810226">Order Sewa Bot</a>
+  </div>
+
+  <div class="card">
+    <span class="pill">Script Bot</span>
+    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+    <div class="title">Script Violet Evergreen</div>
+    <div class="desc">
+      • No Update: 10k<br>
+      • Free Update: 15k<br>
+      • Reseller Script: 20k
+    </div>
+    <a class="btn" href="https://wa.me/6283840810226">Order Script</a>
+  </div>
+
+</div>
+
+<footer>
+  “Fast • Murah • Trusted”<br>
+  © 2025 IPUNGG SHOP 
+</footer>
 
 </div>
 </body>
