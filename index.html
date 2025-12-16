@@ -7,12 +7,7 @@
 
 <style>
 *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
-body{
-  margin:0;
-  min-height:100vh;
-  background:linear-gradient(135deg,#1f2937,#0b1220);
-  color:#e5e7eb
-}
+body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb}
 .wrap{max-width:420px;margin:0 auto;padding:16px}
 
 /* WELCOME */
@@ -66,16 +61,17 @@ body{
 
 /* BUTTON STORE */
 .btn{
-  display:flex;align-items:center;gap:12px;
-  width:100%;padding:14px 16px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.08);
-  color:#e5e7eb;font-weight:800;
-  text-decoration:none;margin-top:10px
+  display:flex;align-items:center;gap:16px;
+  width:100%;padding:20px 18px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.08));
+  color:#e5e7eb;font-weight:900;
+  font-size:16px;
+  text-decoration:none;margin-top:14px
 }
-.btn img{width:42px;height:42px;border-radius:12px;object-fit:cover}
-.btn:hover{background:rgba(255,255,255,.15)}
+.btn img{width:56px;height:56px;border-radius:16px;object-fit:cover}
+.btn:hover{background:rgba(255,255,255,.22)}
 
 .hidden{display:none}
 .list-box{
@@ -92,22 +88,10 @@ footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
 </style>
 
 <script>
-function toggleMenu(){
-  const m=document.getElementById("menu");
-  m.style.display=m.style.display==="block"?"none":"block";
-}
-function openPage(id){
-  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden");
-}
-function backHome(){
-  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
-  document.getElementById("home").classList.remove("hidden");
-}
-function startSite(){
-  document.getElementById("welcome").style.display="none";
-  document.getElementById("bgm").play();
-}
+function toggleMenu(){const m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
+function openPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));document.getElementById(id).classList.remove("hidden");}
+function backHome(){document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));document.getElementById("home").classList.remove("hidden");}
+function startSite(){document.getElementById("welcome").style.display="none";document.getElementById("bgm").play();}
 </script>
 </head>
 
@@ -134,9 +118,11 @@ function startSite(){
 <div class="profile">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div id="menu" class="menu">
-    <strong>📌 Info Bantuan</strong>
-    <a href="https://wa.me/6283840810226">WhatsApp Admin</a>
-    <a href="https://t.me/ipung_brye">Telegram Admin</a>
+    <strong>📌 Informasi</strong>
+    <a href="#" onclick="backHome()">🏠 Katalog Produk</a>
+    <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel Information</a>
+    <a href="https://wa.me/6283840810226">💬 WhatsApp Admin</a>
+    <a href="https://t.me/ipung_brye">✈️ Telegram Admin</a>
   </div>
 
   <div class="avatar">
