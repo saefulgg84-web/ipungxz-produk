@@ -31,10 +31,8 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 .start-btn{
   width:100%;padding:14px;border-radius:999px;
   border:0;background:#e5e7eb;color:#0b1220;
-  font-weight:900;font-size:16px;cursor:pointer;
-  text-decoration:none;text-align:center;display:block;margin-bottom:10px;
+  font-weight:900;font-size:16px;cursor:pointer
 }
-.start-btn-admin{background:#25D366;color:#fff;}
 
 /* HEADER */
 .profile{
@@ -63,14 +61,16 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 
 /* BUTTON STORE */
 .btn{
-  display:flex;align-items:center;gap:16px;
-  width:100%;padding:14px 16px;
-  border-radius:18px;
+  display:block;
+  width:100%;
+  padding:16px 20px;
+  border-radius:22px;
   border:1px solid rgba(255,255,255,.22);
   background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.08));
   color:#e5e7eb;font-weight:900;
   font-size:16px;
-  text-decoration:none;margin:6px 0;
+  text-decoration:none;
+  margin:6px 0;
   text-align:left;
 }
 .btn img{width:56px;height:56px;border-radius:16px;object-fit:cover}
@@ -78,13 +78,14 @@ body{margin:0;min-height:100vh;background:linear-gradient(135deg,#1f2937,#0b1220
 
 .hidden{display:none}
 .list-box{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:18px;
-  padding:14px;
-  font-size:14px;
-  line-height:1.7
+  padding:0;
 }
+.list-box .btn{
+  margin:4px 0;
+  width:100%;
+  text-align:left;
+}
+
 .back{text-align:center;margin-top:14px;font-weight:800;cursor:pointer;opacity:.8}
 
 footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
@@ -112,7 +113,6 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
     <div class="welcome-title">WELCOME TO WEBSITE</div>
     <div class="welcome-name">IPUNGG SHOP</div>
     <button class="start-btn" onclick="startSite()">Start Now</button>
-    <a class="start-btn start-btn-admin" href="https://wa.me/6283840810226" target="_blank">💬 Chat Admin</a>
   </div>
 </div>
 
@@ -122,9 +122,6 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 <div class="profile">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div id="menu" class="menu">
-    <strong>📌 Informasi</strong>
-    <a href="#" onclick="backHome()">🏠 Katalog Produk</a>
-    <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel Information</a>
     <a href="https://wa.me/6283840810226">💬 WhatsApp Admin</a>
     <a href="https://t.me/ipung_brye">✈️ Telegram Admin</a>
   </div>
@@ -138,62 +135,54 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 
 <!-- HOME -->
 <div id="home" class="page">
-  <a class="btn" onclick="openPage('panel')">
-    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-    <span>List Panel Pterodactyl</span>
-  </a>
+  <!-- Katalog Channel dan Payment di atas -->
+  <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel Information</a>
+  <a class="btn" href="https://payment-ipungg.vercel.app/">💳 Payment</a>
 
-  <a class="btn" onclick="openPage('bot')">
-    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-    <span>List Sewa Bot WhatsApp</span>
-  </a>
-
-  <a class="btn" onclick="openPage('script')">
-    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-    <span>Script Violet Evergreen</span>
-  </a>
-
-  <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">
-    <span>📢 Channel Information</span>
-  </a>
-
-  <a class="btn" href="https://payment-ipungg.vercel.app/">
-    <span>💳 Payment</span>
-  </a>
+  <!-- List produk -->
+  <a class="btn" onclick="openPage('panel')">List Panel Pterodactyl</a>
+  <a class="btn" onclick="openPage('bot')">List Sewa Bot WhatsApp</a>
+  <a class="btn" onclick="openPage('script')">Script Violet Evergreen</a>
 </div>
 
 <!-- PANEL -->
 <div id="panel" class="page hidden">
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%201GB" target="_blank">RAM 1GB — 1k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%202GB" target="_blank">RAM 2GB — 2k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%203GB" target="_blank">RAM 3GB — 3k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%204GB" target="_blank">RAM 4GB — 4k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%205GB" target="_blank">RAM 5GB — 5k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%206GB" target="_blank">RAM 6GB — 6k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%207GB" target="_blank">RAM 7GB — 7k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%208GB" target="_blank">RAM 8GB — 8k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%209GB" target="_blank">RAM 9GB — 9k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%20UNLI" target="_blank">RAM UNLI — 10k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Panel" target="_blank">Reseller Panel — 15k — Chat Admin</a>
+  <div class="list-box">
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%201GB" target="_blank">RAM 1GB — 1k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%202GB" target="_blank">RAM 2GB — 2k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%203GB" target="_blank">RAM 3GB — 3k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%204GB" target="_blank">RAM 4GB — 4k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%205GB" target="_blank">RAM 5GB — 5k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%206GB" target="_blank">RAM 6GB — 6k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%207GB" target="_blank">RAM 7GB — 7k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%208GB" target="_blank">RAM 8GB — 8k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%209GB" target="_blank">RAM 9GB — 9k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20RAM%20UNLI" target="_blank">RAM UNLI — 10k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Panel" target="_blank">Reseller Panel — 15k — Chat Admin</a>
+  </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
 <!-- BOT -->
 <div id="bot" class="page hidden">
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Minggu" target="_blank">1 Minggu — 7k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Bulan" target="_blank">1 Bulan — 15k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%202%20Bulan" target="_blank">2 Bulan — 17k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%203%20Bulan" target="_blank">3 Bulan — 23k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Permanen" target="_blank">Permanen — 28k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Jadi%20Bot%20Premium" target="_blank">Jadi Bot + Premium — 30k — Chat Admin</a>
+  <div class="list-box">
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Minggu" target="_blank">1 Minggu — 7k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%201%20Bulan" target="_blank">1 Bulan — 15k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%202%20Bulan" target="_blank">2 Bulan — 17k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%203%20Bulan" target="_blank">3 Bulan — 23k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Permanen" target="_blank">Permanen — 28k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Jadi%20Bot%20Premium" target="_blank">Jadi Bot + Premium — 30k — Chat Admin</a>
+  </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
 <!-- SCRIPT -->
 <div id="script" class="page hidden">
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20No%20Update" target="_blank">No Update — 10k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Free%20Update" target="_blank">Free Update — 15k — Chat Admin</a>
-  <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Script" target="_blank">Reseller Script — 20k — Chat Admin</a>
+  <div class="list-box">
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20No%20Update" target="_blank">No Update — 10k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Free%20Update" target="_blank">Free Update — 15k — Chat Admin</a>
+    <a class="btn" href="https://wa.me/6283840810226?text=Pesan%20Reseller%20Script" target="_blank">Reseller Script — 20k — Chat Admin</a>
+  </div>
   <div class="back" onclick="backHome()">← Kembali</div>
 </div>
 
@@ -203,4 +192,4 @@ function startSite(){document.getElementById("welcome").style.display="none";doc
 
 </div>
 </body>
-    </html>
+</html>
