@@ -20,8 +20,10 @@ margin-bottom:12px
 
 .center{text-align:center}
 .logo{
-width:90px;height:90px;border-radius:50%;
-margin:auto;overflow:hidden
+width:90px;height:90px;
+border-radius:50%;
+margin:auto;
+overflow:hidden
 }
 .logo img{width:100%;height:100%;object-fit:cover}
 
@@ -32,16 +34,26 @@ margin:auto;overflow:hidden
 display:flex;gap:8px;margin-top:12px
 }
 .tab button{
-flex:1;padding:10px;border-radius:999px;
-border:0;background:#1e293b;color:#e5e7eb;
-font-weight:700;cursor:pointer
+flex:1;
+padding:10px;
+border-radius:999px;
+border:0;
+background:#1e293b;
+color:#e5e7eb;
+font-weight:700;
+cursor:pointer
 }
 
 .btn{
-width:100%;padding:11px;margin-top:10px;
-border-radius:999px;border:0;
-background:#e5e7eb;color:#020617;
-font-weight:800;cursor:pointer
+width:100%;
+padding:11px;
+margin-top:10px;
+border-radius:999px;
+border:0;
+background:#e5e7eb;
+color:#020617;
+font-weight:800;
+cursor:pointer
 }
 
 .list{
@@ -53,18 +65,18 @@ border-top:1px solid #1e293b;
 padding-top:10px
 }
 
-img{width:100%;border-radius:12px;margin:10px 0}
+img{
+width:100%;
+border-radius:12px;
+margin:10px 0;
+display:block
+}
 </style>
 
 <script>
 function toggle(id){
   const el = document.getElementById(id);
   el.style.display = el.style.display === "block" ? "none" : "block";
-}
-
-function showPayment(id){
-  document.querySelectorAll('.pay').forEach(e=>e.style.display='none');
-  document.getElementById(id).style.display='block';
 }
 </script>
 </head>
@@ -80,9 +92,12 @@ function showPayment(id){
   <div class="title">IPUNGG SHOP</div>
   <div class="desc">Panel • Sewa Bot • Script</div>
 
+  <!-- MENU ATAS -->
   <div class="tab">
     <button onclick="toggle('produk')">Produk</button>
-    <button onclick="toggle('payment')">Payment</button>
+    <button onclick="location.href='https://payment-ipungg.vercel.app/'">
+      Payment
+    </button>
   </div>
 </div>
 
@@ -112,7 +127,7 @@ function showPayment(id){
 <!-- SEWA BOT -->
 <div class="card">
   <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-  <div class="title">Sewa Bot</div>
+  <div class="title">Sewa Bot WhatsApp</div>
   <button class="btn" onclick="toggle('sewa')">Lihat List</button>
 
   <div id="sewa" class="list">
@@ -129,9 +144,14 @@ function showPayment(id){
   </div>
 </div>
 
-<!-- SCRIPT -->
+<!-- SCRIPT (FIX FOTO) -->
 <div class="card">
-  <img src="https://files.catbox.moe/f6afx2.jpg">
+  <img 
+    src="https://files.catbox.moe/f6afx2.jpg"
+    alt="Script Violet Evergreen"
+    style="display:block;width:100%;border-radius:12px;margin-bottom:10px"
+  >
+
   <div class="title">Script Violet Evergreen</div>
   <button class="btn" onclick="toggle('script')">Lihat List</button>
 
@@ -148,29 +168,6 @@ function showPayment(id){
 
 </div>
 
-<!-- PAYMENT -->
-<div id="payment" class="card" style="display:none">
-  <div class="title center">Payment</div>
-
-  <!-- MENU PAYMENT -->
-  <button class="btn" onclick="showPayment('qris')">QRIS</button>
-  <button class="btn" onclick="showPayment('gopay')">GOPAY</button>
-  <button class="btn" onclick="showPayment('dana')">DANA</button>
-
-  <!-- ISI PAYMENT -->
-  <div id="qris" class="list pay">
-    <img src="https://files.catbox.moe/pwcqww.png">
-  </div>
-
-  <div id="gopay" class="list pay">
-    GOPAY<br>083840810226
-  </div>
-
-  <div id="dana" class="list pay">
-    DANA<br>08131159010
-  </div>
-</div>
-
 </div>
 </body>
-  </html>
+</html>
