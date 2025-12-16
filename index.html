@@ -49,7 +49,8 @@ body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height
 .modal-content th, .modal-content td{padding:8px;text-align:left;border-bottom:1px solid #374151;color:#e5e7eb}
 .modal-content th{text-align:left}
 .modal-content td .btn-order{padding:6px 10px;font-size:14px}
-.modal-content .btn-order{background:#f59e0b;color:#fff;border:none;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-block}
+.modal-content .btn-order{background:#f59e0b;color:#fff;border:none;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-block;transition: all 0.3s ease;}
+.modal-content td .btn-order:hover{background: linear-gradient(135deg,#fbbf24,#f59e0b); transform: scale(1.08);}
 .modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:700;text-align:center;cursor:pointer}
 
 /* FOOTER */
@@ -189,6 +190,22 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 
 <!-- MODAL RENAME SCRIPT -->
 <div id="modal-rename" class="modal">
+  <div class="modal-content">
+    <h3>List Rename Script</h3>
+    <table>
+      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>Rename Biasa</td><td>5k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Full Rename</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+    </table>
+    <div class="btn-close" onclick="closeModal('modal-rename')">Tutup</div>
+  </div>
+</div>
+
+<footer>
+© 2025 IPUNGG SHOP • Open 24/7 WIB
+</footer>
+</body>
+                                            </html>div id="modal-rename" class="modal">
   <div class="modal-content">
     <h3>List Rename Script</h3>
     <table>
