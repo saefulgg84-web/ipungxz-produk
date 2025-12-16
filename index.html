@@ -12,9 +12,8 @@ body{color:#e5e7eb;min-height:100vh;overflow-x:hidden;font-weight:900;position:r
 @keyframes gradMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
 /* Welcome */
-#welcome{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;animation:fadeIn 1s;}
-#welcome::before{content:"";position:absolute;inset:0;background:radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);animation:moveBG 20s linear infinite;}
-.welcome-box{position:relative;max-width:360px;width:100%;margin:16px;padding:24px;border-radius:26px;text-align:center;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18);overflow:hidden;}
+#welcome{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;animation:fadeIn 1s;background:linear-gradient(135deg,#111827,#1f2937);}
+.welcome-box{position:relative;max-width:360px;width:100%;margin:16px;padding:24px;border-radius:26px;text-align:center;background:#1f2937;border:1px solid rgba(255,255,255,.18);overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.3);}
 .welcome-box img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:14px;}
 .welcome-title{font-size:22px;font-weight:900;}
 .welcome-name{font-size:26px;font-weight:900;margin-bottom:8px;}
@@ -65,10 +64,6 @@ body{color:#e5e7eb;min-height:100vh;overflow-x:hidden;font-weight:900;position:r
 .channel-payment a:hover{transform:scale(1.03);background:linear-gradient(135deg,#60a5fa,#3b82f6);}
 
 footer{opacity:.7;text-align:center;font-size:12px;font-weight:700;margin-top:18px}
-
-/* Animasi */
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes moveBG{0%{background-position:0 0}100%{background-position:2000px 2000px}}
 </style>
 <script>
 function toggleMenu(){const m=document.getElementById("menu");m.style.display=m.style.display==="block"?"none":"block";}
@@ -142,7 +137,57 @@ function closeModal(id){document.getElementById(id).style.display="none";}
   <button class="card-btn" onclick="openModal('modal-rename')">Lihat List</button>
 </div>
 
-<!-- Modal Example: Rename Script -->
+<!-- Modal Semua Produk -->
+<!-- Panel -->
+<div id="modal-panel" class="modal">
+  <div class="modal-content">
+    <h3>Panel Pterodactyl</h3>
+    <table>
+      <tr><th>Produk</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>RAM 1GB</td><td>1k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM 2GB</td><td>2k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM 3GB</td><td>3k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM 4GB</td><td>4k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM 5GB</td><td>5k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM 6GB</td><td>6k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>RAM UNLI</td><td>10k</td><td><button class="btn-order">Order</button></td></tr>
+    </table>
+    <div class="btn-close" onclick="closeModal('modal-panel')">Tutup</div>
+  </div>
+</div>
+
+<!-- Bot -->
+<div id="modal-bot" class="modal">
+  <div class="modal-content">
+    <h3>Sewa Bot WhatsApp</h3>
+    <table>
+      <tr><th>Produk</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>1 Minggu</td><td>7k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>1 Bulan</td><td>15k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>2 Bulan</td><td>17k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>3 Bulan</td><td>23k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>Permanen</td><td>28k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>Jadi Bot + Premium</td><td>30k</td><td><button class="btn-order">Order</button></td></tr>
+    </table>
+    <div class="btn-close" onclick="closeModal('modal-bot')">Tutup</div>
+  </div>
+</div>
+
+<!-- Script -->
+<div id="modal-script" class="modal">
+  <div class="modal-content">
+    <h3>Script Violet Evergreen</h3>
+    <table>
+      <tr><th>Produk</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>No Update</td><td>10k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>Free Update</td><td>15k</td><td><button class="btn-order">Order</button></td></tr>
+      <tr><td>Reseller Script</td><td>20k</td><td><button class="btn-order">Order</button></td></tr>
+    </table>
+    <div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
+  </div>
+</div>
+
+<!-- Rename Script -->
 <div id="modal-rename" class="modal">
   <div class="modal-content">
     <h3>Rename Script</h3>
