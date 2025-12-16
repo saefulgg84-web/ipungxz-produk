@@ -1,114 +1,206 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IPUNGG SHOP</title>
-<style>
-*{box-sizing:border-box;font-family:Arial,sans-serif}
-body{margin:0;background:#0b1220;color:#e5e7eb}
-.wrap{max-width:420px;margin:auto;padding:16px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPUNGG SHOP — Catalog Product</title>
 
-.card{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-border-radius:20px;
-padding:16px;
-margin-bottom:16px
-}
-.center{text-align:center}
-.avatar{
-width:90px;height:90px;border-radius:50%;
-background:#111827;color:#38bdf8;
-display:flex;align-items:center;justify-content:center;
-font-weight:900;margin:auto
-}
-.btn{
-display:block;width:100%;padding:12px;
-border-radius:999px;margin-top:10px;
-text-decoration:none;text-align:center;
-font-weight:700;background:#e5e7eb;color:#000
-}
-.btn.alt{background:transparent;color:#fff;border:1px solid #fff}
-img{width:100%;border-radius:14px;margin:10px 0}
-small{opacity:.8}
-</style>
+  <style>
+    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:linear-gradient(135deg,#1f2937,#0b1220);
+      color:#e5e7eb
+    }
+    .wrap{max-width:420px;margin:0 auto;padding:16px}
+
+    /* PROFILE */
+    .profile{
+      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:22px;
+      padding:18px;
+      text-align:center;
+      margin-bottom:16px
+    }
+    .avatar{
+      width:96px;height:96px;border-radius:50%;
+      margin:0 auto 10px;
+      overflow:hidden
+    }
+    .avatar img{
+      width:100%;height:100%;object-fit:cover
+    }
+    .name{font-size:22px;font-weight:800}
+    .tag{opacity:.8;font-size:13px;margin-top:2px}
+
+    /* BUTTON */
+    .btn{
+      display:block;width:100%;
+      padding:12px 14px;
+      border-radius:999px;
+      border:0;
+      background:#e5e7eb;
+      color:#0b1220;
+      font-weight:800;
+      text-decoration:none;
+      margin-top:10px
+    }
+    .btn.alt{
+      background:transparent;
+      color:#e5e7eb;
+      border:1px solid rgba(255,255,255,.25)
+    }
+
+    /* SECTION */
+    .section{margin-top:14px}
+    .card{
+      background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:22px;
+      padding:16px;
+      margin-bottom:14px
+    }
+    .pill{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      font-size:12px;
+      margin-bottom:8px
+    }
+    .title{font-size:20px;font-weight:800;margin:6px 0}
+    .desc{font-size:14px;line-height:1.6;opacity:.9}
+
+    footer{
+      opacity:.7;
+      text-align:center;
+      font-size:12px;
+      margin-top:18px
+    }
+
+    img{
+      width:100%;
+      border-radius:16px;
+      margin:10px 0
+    }
+  </style>
 </head>
-<body>
 
+<body>
 <div class="wrap">
 
-<!-- HOME -->
-<div class="card center">
-<div class="avatar">IP</div>
-<h2>IPUNGG SHOP</h2>
-<small>Panel • Sewa Bot • Script</small>
-<a class="btn alt" href="#produk">Produk</a>
-<a class="btn alt" href="#payment">Payment</a>
-</div>
+  <!-- HOME / PROFILE -->
+  <div class="profile">
+    <div class="avatar">
+      <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
+    </div>
+    <div class="name">IPUNGG SHOP</div>
+    <div class="tag">Panel • Sewa Bot • Digital Service</div>
 
-<!-- PRODUK MENU -->
-<div id="produk" class="card">
-<h3>📦 Produk</h3>
+    <!-- DASHBOARD BUTTON -->
+    <a class="btn alt" href="#product">📦 Dashboard Produk</a>
+    <a class="btn alt" href="#dashboard-payment">💳 Dashboard Payment</a>
+  </div>
 
-<img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-<a class="btn" href="#list-panel">Lihat List Panel</a>
+  <!-- DASHBOARD PRODUK -->
+  <div id="product" class="section">
 
-<img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-<a class="btn" href="#list-sewa">Lihat List Sewa Bot</a>
+    <!-- PANEL -->
+    <div class="card">
+      <span class="pill">Panel Pterodactyl</span>
+      <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+      <div class="desc">
+        RAM 1GB – UNLI<br>
+        Reseller tersedia
+      </div>
+      <a class="btn" href="#list-panel">Lihat List Panel</a>
+    </div>
 
-<img src="https://files.catbox.moe/f6afx2.jpg">
-<a class="btn" href="#list-script">Lihat List Script</a>
-</div>
+    <!-- LIST PANEL -->
+    <div id="list-panel" class="card">
+      <div class="title">🖥️ List Panel</div>
+      <ul>
+        <li>RAM 1GB — 1k</li>
+        <li>RAM 2GB — 2k</li>
+        <li>RAM 3GB — 3k</li>
+        <li>RAM 4GB — 4k</li>
+        <li>RAM 5–9GB — menyesuaikan</li>
+        <li>RAM UNLI — 10k</li>
+        <li>Reseller Panel — 15k (Permanen)</li>
+      </ul>
+      <a class="btn" href="https://wa.me/6283840810226">Order Panel</a>
+    </div>
 
-<!-- LIST PANEL -->
-<div id="list-panel" class="card">
-<h3>🖥️ List Panel</h3>
-<ul>
-<li>RAM 1GB — 1k</li>
-<li>RAM 2GB — 2k</li>
-<li>RAM 3GB — 3k</li>
-<li>RAM 4GB — 4k</li>
-<li>RAM 5–9GB — sesuai harga</li>
-<li>RAM UNLI — 10k</li>
-<li>Reseller Panel — 15k (Permanen)</li>
-</ul>
-<a class="btn" href="https://wa.me/6283840810226">Order Panel</a>
-</div>
+    <!-- SEWA BOT -->
+    <div class="card">
+      <span class="pill">Sewa Bot</span>
+      <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+      <div class="desc">
+        Auto reply • Group • Fitur lengkap
+      </div>
+      <a class="btn" href="#list-sewa">Lihat List Sewa Bot</a>
+    </div>
 
-<!-- LIST SEWA BOT -->
-<div id="list-sewa" class="card">
-<h3>🤖 List Sewa Bot</h3>
-<ul>
-<li>1 Minggu — 7k</li>
-<li>1 Bulan — 15k</li>
-<li>2 Bulan — 17k</li>
-<li>3 Bulan — 23k</li>
-<li>Permanen — 28k</li>
-<li>Jadi Bot + Premium — 30k</li>
-</ul>
-<a class="btn" href="https://wa.me/6283840810226">Order Sewa Bot</a>
-</div>
+    <!-- LIST SEWA BOT -->
+    <div id="list-sewa" class="card">
+      <div class="title">🤖 List Sewa Bot</div>
+      <ul>
+        <li>1 Minggu — 7k</li>
+        <li>1 Bulan — 15k</li>
+        <li>2 Bulan — 17k</li>
+        <li>3 Bulan — 23k</li>
+        <li>Permanen — 28k</li>
+        <li>Jadi Bot + Premium — 30k</li>
+      </ul>
+      <a class="btn" href="https://wa.me/6283840810226">Order Sewa Bot</a>
+    </div>
 
-<!-- LIST SCRIPT -->
-<div id="list-script" class="card">
-<h3>📜 Script Violet Evergreen</h3>
-<ul>
-<li>No Update — 10k</li>
-<li>Free Update — 15k</li>
-<li>Reseller Script — 20k</li>
-</ul>
-<a class="btn" href="https://wa.me/6283840810226">Order Script</a>
-</div>
+    <!-- SCRIPT -->
+    <div class="card">
+      <span class="pill">Script Bot</span>
+      <img src="https://files.catbox.moe/f6afx2.jpg">
+      <div class="title">Script Violet Evergreen</div>
+      <ul>
+        <li>No Update — 10k</li>
+        <li>Free Update — 15k</li>
+        <li>Reseller Script — 20k</li>
+      </ul>
+      <a class="btn" href="https://wa.me/6283840810226">Order Script</a>
+    </div>
 
-<!-- PAYMENT -->
-<div id="payment" class="card">
-<h3>💳 Payment</h3>
-<img src="https://files.catbox.moe/pwcqww.png">
-<p>GOPAY: 083840810226<br>DANA: 08131159010</p>
-<a class="btn alt" href="https://wa.me/6283840810226">Konfirmasi Admin</a>
-</div>
+  </div>
+
+  <!-- DASHBOARD PAYMENT -->
+  <div id="dashboard-payment" class="section">
+    <div class="card">
+      <div class="title">💳 Dashboard Payment</div>
+
+      <div class="card">
+        <div class="title">QRIS</div>
+        <img src="https://files.catbox.moe/pwcqww.png">
+      </div>
+
+      <div class="card">
+        <div class="title">GOPAY</div>
+        <div class="desc">083840810226</div>
+      </div>
+
+      <div class="card">
+        <div class="title">DANA</div>
+        <div class="desc">08131159010</div>
+      </div>
+
+      <a class="btn" href="https://wa.me/6283840810226">Konfirmasi Pembayaran</a>
+    </div>
+  </div>
+
+  <footer>
+    “Fast • Murah • Trusted”<br>
+    © 2025 IPUNGG SHOP • Open 24/7 WIB
+  </footer>
 
 </div>
 </body>
-</html>
+  </html>
