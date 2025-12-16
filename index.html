@@ -92,7 +92,6 @@ function toggle(id){
   <div class="title">IPUNGG SHOP</div>
   <div class="desc">Panel • Sewa Bot • Script</div>
 
-  <!-- MENU ATAS -->
   <div class="tab">
     <button onclick="toggle('produk')">Produk</button>
     <button onclick="location.href='https://payment-ipungg.vercel.app/'">
@@ -144,13 +143,39 @@ function toggle(id){
   </div>
 </div>
 
-<!-- SCRIPT (FIX FOTO) -->
+<!-- SCRIPT (FIX AMAN CATBOX) -->
 <div class="card">
-  <img 
-    src="https://files.catbox.moe/f6afx2.jpg"
-    alt="Script Violet Evergreen"
-    style="display:block;width:100%;border-radius:12px;margin-bottom:10px"
-  >
+
+  <div style="
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    background:#020617;
+    margin-bottom:10px;
+  ">
+    <img
+      src="https://files.catbox.moe/f6afx2.jpg"
+      alt="Script Violet Evergreen"
+      loading="eager"
+      referrerpolicy="no-referrer"
+      style="width:100%;display:block"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+
+    <!-- FALLBACK JIKA GAMBAR GAGAL -->
+    <div style="
+      display:none;
+      height:180px;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:16px;
+      background:#020617;
+      color:#e5e7eb;
+    ">
+      Script Violet Evergreen
+    </div>
+  </div>
 
   <div class="title">Script Violet Evergreen</div>
   <button class="btn" onclick="toggle('script')">Lihat List</button>
@@ -170,4 +195,4 @@ function toggle(id){
 
 </div>
 </body>
-</html>
+    </html>
