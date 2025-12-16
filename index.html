@@ -13,7 +13,7 @@ body{
   background:linear-gradient(135deg,#1f2937,#0b1220);
   color:#e5e7eb
 }
-.wrap{max-width:420px;margin:0 auto;padding:16px;position:relative}
+.wrap{max-width:420px;margin:0 auto;padding:16px}
 
 .profile{
   background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
@@ -27,26 +27,48 @@ body{
 .avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .name{font-size:22px;font-weight:800}
-.tag{opacity:.8;font-size:13px;margin-top:2px}
+.tag{opacity:.8;font-size:13px}
 
 .menu-btn{
-  position:absolute;top:14px;right:16px;
-  font-size:22px;cursor:pointer
+  position:absolute;
+  top:14px;
+  right:16px;
+  font-size:22px;
+  cursor:pointer
 }
 .menu{
-  display:none;position:absolute;top:48px;right:16px;
-  background:#020617;border:1px solid #1e293b;
-  border-radius:14px;width:220px;padding:12px;z-index:10
+  display:none;
+  position:absolute;
+  top:48px;
+  right:16px;
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:14px;
+  width:220px;
+  padding:12px;
+  z-index:10
 }
-.menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
+.menu a{
+  display:block;
+  padding:10px;
+  border-radius:10px;
+  color:#e5e7eb;
+  text-decoration:none
+}
 .menu a:hover{background:#1e293b}
 
 .btn{
-  display:block;width:100%;
-  padding:12px 14px;border-radius:999px;
-  border:0;background:#e5e7eb;
-  color:#0b1220;font-weight:800;
-  text-decoration:none;margin-top:10px;text-align:center
+  display:block;
+  width:100%;
+  padding:12px 14px;
+  border-radius:999px;
+  border:0;
+  background:#e5e7eb;
+  color:#0b1220;
+  font-weight:800;
+  text-decoration:none;
+  margin-top:10px;
+  text-align:center
 }
 
 .section{margin-top:14px}
@@ -54,25 +76,42 @@ body{
   background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.08));
   border:1px solid rgba(255,255,255,.18);
   border-radius:22px;
-  padding:16px;margin-bottom:14px
+  padding:16px;
+  margin-bottom:14px
 }
 .pill{
-  display:inline-block;padding:6px 12px;
-  border-radius:999px;background:rgba(255,255,255,.18);
-  font-size:12px;margin-bottom:8px
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  font-size:12px;
+  margin-bottom:8px
 }
 .title{font-size:20px;font-weight:800;margin:6px 0}
-.desc{font-size:14px;line-height:1.6;opacity:.9}
-.list{font-size:14px;line-height:1.7;margin-top:8px}
+.list{
+  display:none;
+  font-size:14px;
+  line-height:1.7;
+  margin-top:10px
+}
 img{width:100%;border-radius:16px;margin:10px 0}
 
-footer{opacity:.7;text-align:center;font-size:12px;margin-top:18px}
+footer{
+  opacity:.7;
+  text-align:center;
+  font-size:12px;
+  margin-top:18px
+}
 </style>
 
 <script>
 function toggleMenu(){
-  const m=document.getElementById("menu");
-  m.style.display=m.style.display==="block"?"none":"block";
+  const m=document.getElementById('menu');
+  m.style.display = m.style.display === 'block' ? 'none' : 'block';
+}
+function toggleList(id){
+  const el=document.getElementById(id);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
 }
 </script>
 </head>
@@ -95,69 +134,67 @@ function toggleMenu(){
   <div class="name">IPUNGG SHOP</div>
   <div class="tag">Panel • Sewa Bot • Script</div>
 
-  <!-- KATALOG CHANNEL -->
   <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">
     Channel Information
   </a>
-
-  <!-- PAYMENT -->
-  <a class="btn" href="https://payment-ipungg.vercel.app/">Payment</a>
+  <a class="btn" href="https://payment-ipungg.vercel.app/">
+    Payment
+  </a>
 </div>
 
-<!-- PANEL -->
+<!-- PRODUK -->
 <div class="section">
-  <div class="card">
-    <span class="pill">Panel Pterodactyl</span>
-    <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-    <div class="title">List Panel</div>
-    <div class="list">
-      RAM 1GB — 1k<br>
-      RAM 2GB — 2k<br>
-      RAM 3GB — 3k<br>
-      RAM 4GB — 4k<br>
-      RAM 5GB — 5k<br>
-      RAM 6GB — 6k<br>
-      RAM 7GB — 7k<br>
-      RAM 8GB — 8k<br>
-      RAM 9GB — 9k<br>
-      RAM UNLI — 10k<br>
-      Reseller Panel — 15k
-    </div>
-    <a class="btn" href="https://wa.me/6283840810226">Order Panel</a>
-  </div>
 
-  <!-- SEWA BOT -->
-  <div class="card">
-    <span class="pill">Sewa Bot</span>
-    <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-    <div class="title">List Sewa Bot</div>
-    <div class="list">
-      1 Minggu — 7k<br>
-      1 Bulan — 15k<br>
-      2 Bulan — 17k<br>
-      3 Bulan — 23k<br>
-      Permanen — 28k<br>
-      Jadi Bot + Premium — 30k
-    </div>
-    <a class="btn" href="https://wa.me/6283840810226">Order Sewa Bot</a>
+<!-- PANEL -->
+<div class="card">
+  <span class="pill">Panel Pterodactyl</span>
+  <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+  <a class="btn" onclick="toggleList('panel')">Lihat List Panel</a>
+  <div id="panel" class="list">
+    RAM 1GB — 1k<br>
+    RAM 2GB — 2k<br>
+    RAM 3GB — 3k<br>
+    RAM 4GB — 4k<br>
+    RAM 5GB — 5k<br>
+    RAM 6GB — 6k<br>
+    RAM 7GB — 7k<br>
+    RAM 8GB — 8k<br>
+    RAM 9GB — 9k<br>
+    RAM UNLI — 10k<br>
+    Reseller Panel — 15k
   </div>
+</div>
 
-  <!-- SCRIPT -->
-  <div class="card">
-    <span class="pill">Script Bot</span>
-    <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-    <div class="title">Script Violet Evergreen</div>
-    <div class="list">
-      No Update — 10k<br>
-      Free Update — 15k<br>
-      Reseller Script — 20k
-    </div>
-    <a class="btn" href="https://wa.me/6283840810226">Order Script</a>
+<!-- SEWA BOT -->
+<div class="card">
+  <span class="pill">Sewa Bot</span>
+  <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+  <a class="btn" onclick="toggleList('bot')">Lihat List Sewa Bot</a>
+  <div id="bot" class="list">
+    1 Minggu — 7k<br>
+    1 Bulan — 15k<br>
+    2 Bulan — 17k<br>
+    3 Bulan — 23k<br>
+    Permanen — 28k<br>
+    Jadi Bot + Premium — 30k
   </div>
+</div>
+
+<!-- SCRIPT -->
+<div class="card">
+  <span class="pill">Script Bot</span>
+  <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+  <a class="btn" onclick="toggleList('script')">Lihat List Script</a>
+  <div id="script" class="list">
+    No Update — 10k<br>
+    Free Update — 15k<br>
+    Reseller Script — 20k
+  </div>
+</div>
+
 </div>
 
 <footer>
-  “Fast • Murah • Trusted”<br>
   © 2025 IPUNGG SHOP • Open 24/7 WIB
 </footer>
 
