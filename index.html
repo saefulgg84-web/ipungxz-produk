@@ -43,10 +43,13 @@ body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height
 
 /* MODAL */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999}
-.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:90%;max-width:400px;max-height:80vh;overflow-y:auto}
+.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:95%;max-width:400px;max-height:80vh;overflow-y:auto}
 .modal-content h3{margin-bottom:12px;font-size:16px;text-align:center}
-.modal-content .list-item{padding:10px 12px;margin-bottom:6px;background:#0b1220;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
-.modal-content .btn-order{margin-top:12px;width:100%;padding:12px;border-radius:18px;background:#f59e0b;color:#fff;font-weight:700;text-align:center;text-decoration:none;display:block}
+.modal-content table{width:100%;border-collapse:collapse;margin-bottom:12px}
+.modal-content th, .modal-content td{padding:8px;text-align:left;border-bottom:1px solid #374151;color:#e5e7eb}
+.modal-content th{text-align:left}
+.modal-content td .btn-order{padding:6px 10px;font-size:14px}
+.modal-content .btn-order{background:#f59e0b;color:#fff;border:none;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-block}
 .modal-content .btn-close{margin-top:6px;width:100%;padding:12px;border-radius:18px;background:#6b7280;color:#fff;font-weight:700;text-align:center;cursor:pointer}
 
 /* FOOTER */
@@ -128,18 +131,20 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <div id="modal-panel" class="modal">
   <div class="modal-content">
     <h3>List Panel Pterodactyl</h3>
-    RAM 1GB <span>1k</span><br>
-    RAM 2GB <span>2k</span><br>
-    RAM 3GB <span>3k</span><br>
-    RAM 4GB <span>4k</span><br>
-    RAM 5GB <span>5k</span><br>
-    RAM 6GB <span>6k</span><br>
-    RAM 7GB <span>7k</span><br>
-    RAM 8GB <span>8k</span><br>
-    RAM 9GB <span>9k</span><br>
-    RAM UNLI <span>10k</span><br>
-    Reseller Panel <span>15k</span><br>
-    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
+    <table>
+      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>RAM 1GB</td><td>1k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 2GB</td><td>2k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 3GB</td><td>3k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 4GB</td><td>4k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 5GB</td><td>5k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 6GB</td><td>6k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 7GB</td><td>7k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 8GB</td><td>8k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM 9GB</td><td>9k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>RAM UNLI</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Reseller Panel</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+    </table>
     <div class="btn-close" onclick="closeModal('modal-panel')">Tutup</div>
   </div>
 </div>
@@ -148,13 +153,15 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <div id="modal-bot" class="modal">
   <div class="modal-content">
     <h3>List Sewa Bot WhatsApp</h3>
-    1 Minggu <span>7k</span><br>
-    1 Bulan <span>15k</span><br>
-    2 Bulan <span>17k</span><br>
-    3 Bulan <span>23k</span><br>
-    Permanen <span>28k</span><br>
-    Jadi Bot + Premium <span>30k</span><br>
-    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
+    <table>
+      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>1 Minggu</td><td>7k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>1 Bulan</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>2 Bulan</td><td>17k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>3 Bulan</td><td>23k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Permanen</td><td>28k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Jadi Bot + Premium</td><td>30k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+    </table>
     <div class="btn-close" onclick="closeModal('modal-bot')">Tutup</div>
   </div>
 </div>
@@ -163,10 +170,12 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <div id="modal-script" class="modal">
   <div class="modal-content">
     <h3>List Script Violet Evergreen</h3>
-    No Update <span>10k</span><br>
-    Free Update <span>15k</span><br>
-    Reseller Script <span>20k</span><br>
-    <a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Beli / Order</a>
+    <table>
+      <tr><th>Varian</th><th>Harga</th><th>Order</th></tr>
+      <tr><td>No Update</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Free Update</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+      <tr><td>Reseller Script</td><td>20k</td><td><a class="btn-order" href="https://wa.me/6283840810226" target="_blank">Order</a></td></tr>
+    </table>
     <div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
   </div>
 </div>
