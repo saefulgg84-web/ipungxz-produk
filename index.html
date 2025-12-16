@@ -30,11 +30,18 @@ body{background:linear-gradient(135deg,#1f2937,#0b1220);color:#e5e7eb;min-height
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
 .menu a:hover{background:#1e293b}
 
+/* BUTTONS */
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;padding:16px;border-radius:18px;border:none;
+  background:rgba(255,255,255,.16);color:#e5e7eb;font-weight:900;
+  cursor:pointer;text-decoration:none;margin-bottom:12px;font-size:16px
+}
+
 /* CARD PRODUK */
 .card{background: rgba(255,255,255,0.06);border-radius: 18px;padding: 12px;margin-bottom: 14px;text-align: center}
 .card img{width: 100%;border-radius: 12px;margin-bottom: 8px}
 .card h3{font-size: 16px;font-weight: 700;margin-bottom: 8px}
-.card .btn{width:90%;margin:0 auto;padding:12px;border-radius:18px;border:none;background:rgba(255,255,255,.16);color:#e5e7eb;font-weight:900;cursor:pointer}
 
 /* MODAL */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999}
@@ -56,7 +63,6 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 </head>
 <body>
 
-<!-- AUDIO -->
 <audio id="bgm" loop preload="auto">
   <source src="https://raw.githubusercontent.com/zionjs0/whatsapp-media/main/file_1765856657376.mp3" type="audio/mpeg">
 </audio>
@@ -80,7 +86,6 @@ function closeModal(id){document.getElementById(id).style.display="none";}
     <a href="https://wa.me/6283840810226">💬 WhatsApp Admin</a>
     <a href="https://t.me/ipung_brye">✈️ Telegram Admin</a>
   </div>
-
   <div class="avatar">
     <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
   </div>
@@ -89,11 +94,17 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 </div>
 
 <!-- HOME -->
-<div id="home" class="page">
+<div id="home">
 
-  <!-- Channel & Payment -->
-  <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel Information</a>
-  <a class="btn" href="https://payment-ipungg.vercel.app/">💳 Payment</a>
+  <!-- Channel & Payment Horizontal -->
+  <div style="display:flex;gap:12px;margin-bottom:14px">
+    <a class="btn" href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o" style="flex:1;text-align:center;font-size:16px;padding:16px">
+      📢 Channel
+    </a>
+    <a class="btn" href="https://payment-ipungg.vercel.app/" style="flex:1;text-align:center;font-size:16px;padding:16px">
+      💳 Payment
+    </a>
+  </div>
 
   <!-- Card Produk -->
   <div class="card">
@@ -154,6 +165,5 @@ function closeModal(id){document.getElementById(id).style.display="none";}
 <footer>
 © 2025 IPUNGG SHOP • Open 24/7 WIB
 </footer>
-</div>
 </body>
   </html>
