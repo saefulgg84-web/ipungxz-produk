@@ -6,286 +6,141 @@
 <title>IPUNGG SHOP</title>
 
 <style>
-*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif;margin:0;padding:0;font-weight:900}
-body{
-  color:#e5e7eb;
-  min-height:100vh;
-  background:linear-gradient(135deg,#020617,#0f172a,#020617);
-  background-size:200% 200%;
-  animation:bg 25s linear infinite
-}
-@keyframes bg{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;font-weight:900}
+body{background:#020617;color:#e5e7eb}
 .wrap{max-width:420px;margin:auto;padding:16px}
 
-/* WELCOME */
-#welcome{
-  position:fixed;inset:0;z-index:999;
-  display:flex;align-items:center;justify-content:center;
-  background:#020617
-}
-.welcome-box{
-  background:#0f172a;
-  border-radius:26px;
-  padding:24px;
-  width:90%;max-width:360px;
-  text-align:center
-}
-.welcome-box img{
-  width:120px;height:120px;
-  border-radius:50%;margin-bottom:14px
-}
-.start-btn{
-  width:100%;padding:14px;
-  border-radius:999px;border:0;
-  background:#fbbf24;color:#020617;
-  font-size:16px;cursor:pointer
-}
-
-/* HEADER */
-.profile{
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:22px;
-  padding:18px;
-  text-align:center;
-  margin-bottom:16px;
-  position:relative
-}
-.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-.menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
-.menu{
-  display:none;position:absolute;
-  top:48px;right:16px;
-  background:#020617;
-  border:1px solid #1e293b;
-  border-radius:14px;
-  width:160px;padding:12px
-}
-.menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
-.menu a:hover{background:#1e293b}
-
-/* CHANNEL */
-.channel-payment{display:flex;gap:12px;margin-bottom:14px}
-.channel-payment a{
-  flex:1;padding:20px;
-  border-radius:22px;
-  text-align:center;
-  background:linear-gradient(135deg,#3b82f6,#60a5fa);
-  color:#fff;text-decoration:none;font-size:18px
-}
+/* BUTTON */
+.btn{width:100%;padding:14px;border-radius:16px;border:none;background:#fbbf24;color:#020617;font-size:15px;cursor:pointer}
+.btn:hover{opacity:.9}
 
 /* CARD */
-.card{
-  background:rgba(255,255,255,.06);
-  border-radius:20px;
-  padding:12px;
-  margin-bottom:14px;
-  text-align:center
-}
+.card{background:#0f172a;border-radius:20px;padding:12px;margin-bottom:14px;text-align:center}
 .card img{width:100%;border-radius:14px;margin-bottom:10px}
-.card h3{margin-bottom:8px}
-.card-btn{
-  width:100%;padding:16px;
-  border-radius:18px;border:0;
-  background:linear-gradient(135deg,#fbbf24,#f59e0b);
-  color:#020617;font-size:16px;
-  cursor:pointer
-}
 
 /* MODAL */
-.modal{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.7);
-  backdrop-filter:blur(6px);
-  justify-content:center;align-items:center;
-  z-index:9999
-}
-.modal-content{
-  background:#0f172a;
-  border-radius:18px;
-  padding:16px;
-  width:95%;max-width:400px;
-  max-height:80vh;overflow:auto
-}
-.modal-content table{width:100%;border-collapse:collapse}
-.modal-content th,.modal-content td{
-  padding:8px;border-bottom:1px solid #334155
-}
-.btn-order{
-  padding:6px 10px;
-  border-radius:10px;border:0;
-  background:#f59e0b;
-  color:#020617;cursor:pointer
-}
-.btn-close{
-  margin-top:10px;
-  padding:12px;
-  border-radius:14px;
-  background:#475569;
-  text-align:center;
-  cursor:pointer
-}
-footer{text-align:center;opacity:.6;font-size:12px;margin-top:20px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);justify-content:center;align-items:center;z-index:9999}
+.modal-box{background:#020617;padding:16px;border-radius:18px;width:95%;max-width:400px;max-height:85vh;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:8px;border-bottom:1px solid #334155}
+.close{margin-top:10px;background:#475569;padding:12px;border-radius:14px;text-align:center;cursor:pointer}
 </style>
 
 <script>
-function toggleMenu(){
-  const m=document.getElementById('menu');
-  m.style.display=m.style.display==='block'?'none':'block';
-}
-function startSite(){
-  document.getElementById('welcome').style.display='none';
-  document.getElementById('bgm').play();
-}
-function openModal(id){
-  document.getElementById(id).style.display='flex';
-}
-function closeModal(id){
-  document.getElementById(id).style.display='none';
-}
-function orderWA(produk,harga){
-  const msg=`Halo Admin, saya mau order ${produk} (${harga})`;
-  window.open(
-    `https://wa.me/6283840810226?text=${encodeURIComponent(msg)}`,
-    '_blank'
-  );
-}
+function openM(id){document.getElementById(id).style.display="flex"}
+function closeM(id){document.getElementById(id).style.display="none"}
+function order(n,h){window.open(`https://wa.me/6283840810226?text=${encodeURIComponent("Halo Admin, saya order "+n+" ("+h+")")}`)}
 </script>
 </head>
 
 <body>
-<audio id="bgm" loop>
-  <source src="https://raw.githubusercontent.com/zionjs0/whatsapp-media/main/file_1765889062111.mp3">
-</audio>
-
-<!-- WELCOME -->
-<div id="welcome">
-  <div class="welcome-box">
-    <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
-    <div>WELCOME TO WEBSITE</div>
-    <h2>IPUNGG SHOP</h2>
-    <p>Panel • Bot • Script • Rename</p>
-    <button class="start-btn" onclick="startSite()">Start Now</button>
-  </div>
-</div>
-
 <div class="wrap">
 
-<!-- HEADER -->
-<div class="profile">
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <div id="menu" class="menu">
-    <a href="https://wa.me/6283840810226">WhatsApp</a>
-    <a href="https://t.me/ipung_brye">Telegram</a>
-  </div>
-  <div class="avatar">
-    <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
-  </div>
-  <h2>IPUNGG SHOP</h2>
-  <div>Open 24/7</div>
-</div>
-
-<div class="channel-payment">
-  <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">📢 Channel</a>
-  <a href="https://payment-ipungg.vercel.app/">💳 Payment</a>
-</div>
-
-<!-- PRODUK -->
+<!-- PANEL -->
 <div class="card">
-  <img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
-  <h3>Panel Pterodactyl</h3>
-  <button class="card-btn" onclick="openModal('panel')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+<h3>Panel Pterodactyl</h3>
+<button class="btn" onclick="openM('panel')">Lihat List</button>
 </div>
 
+<!-- BOT -->
 <div class="card">
-  <img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
-  <h3>Sewa Bot WhatsApp</h3>
-  <button class="card-btn" onclick="openModal('bot')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+<h3>Sewa Bot WhatsApp</h3>
+<button class="btn" onclick="openM('bot')">Lihat List</button>
 </div>
 
+<!-- VIOLET -->
 <div class="card">
-  <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-  <h3>Script Violet Evergreen</h3>
-  <button class="card-btn" onclick="openModal('violet')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+<h3>Script Violet Evergreen</h3>
+<button class="btn" onclick="openM('violet')">Lihat List</button>
 </div>
 
+<!-- ATRIELLE -->
 <div class="card">
-  <img src="https://files.catbox.moe/6hydra.jpg">
-  <h3>Script ATRIELLE</h3>
-  <button class="card-btn" onclick="openModal('atrielle')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
+<h3>Script ATRIELLE</h3>
+<button class="btn" onclick="openM('atrielle')">Lihat List</button>
 </div>
 
+<!-- RENAME -->
 <div class="card">
-  <img src="https://files.catbox.moe/isqlpn.jpg">
-  <h3>Rename Script</h3>
-  <button class="card-btn" onclick="openModal('rename')">Lihat List</button>
+<img src="https://files.catbox.moe/isqlpn.jpg">
+<h3>Rename Script</h3>
+<button class="btn" onclick="openM('rename')">Lihat List</button>
 </div>
 
-<footer>© 2025 IPUNGG SHOP</footer>
 </div>
 
-<!-- MODALS -->
+<!-- PANEL MODAL -->
 <div id="panel" class="modal">
-<div class="modal-content">
+<div class="modal-box">
 <h3>Panel Pterodactyl</h3>
 <table>
-<tr><td>RAM 1GB</td><td>1K</td><td><button class="btn-order" onclick="orderWA('Panel 1GB','1K')">Order</button></td></tr>
-<tr><td>RAM 5GB</td><td>5K</td><td><button class="btn-order" onclick="orderWA('Panel 5GB','5K')">Order</button></td></tr>
-<tr><td>RAM UNLI</td><td>10K</td><td><button class="btn-order" onclick="orderWA('Panel UNLI','10K')">Order</button></td></tr>
+<tr><th>Paket</th><th>Harga</th><th>Order</th></tr>
+<tr><td>RAM 1GB</td><td>1K</td><td><button onclick="order('Panel 1GB','1K')">Order</button></td></tr>
+<tr><td>RAM 2GB</td><td>2K</td><td><button onclick="order('Panel 2GB','2K')">Order</button></td></tr>
+<tr><td>RAM 3GB</td><td>3K</td><td><button onclick="order('Panel 3GB','3K')">Order</button></td></tr>
+<tr><td>RAM 4GB</td><td>4K</td><td><button onclick="order('Panel 4GB','4K')">Order</button></td></tr>
+<tr><td>RAM 5GB</td><td>5K</td><td><button onclick="order('Panel 5GB','5K')">Order</button></td></tr>
+<tr><td>RAM 6GB</td><td>6K</td><td><button onclick="order('Panel 6GB','6K')">Order</button></td></tr>
+<tr><td>RAM 7GB</td><td>7K</td><td><button onclick="order('Panel 7GB','7K')">Order</button></td></tr>
+<tr><td>RAM 8GB</td><td>8K</td><td><button onclick="order('Panel 8GB','8K')">Order</button></td></tr>
+<tr><td>RAM 9GB</td><td>9K</td><td><button onclick="order('Panel 9GB','9K')">Order</button></td></tr>
+<tr><td>RAM UNLI</td><td>10K</td><td><button onclick="order('Panel UNLI','10K')">Order</button></td></tr>
+<tr><td>Reseller Panel</td><td>15K</td><td><button onclick="order('Reseller Panel','15K')">Order</button></td></tr>
 </table>
-<div class="btn-close" onclick="closeModal('panel')">Tutup</div>
+<div class="close" onclick="closeM('panel')">Tutup</div>
 </div>
 </div>
 
+<!-- BOT MODAL -->
 <div id="bot" class="modal">
-<div class="modal-content">
-<h3>Sewa Bot WhatsApp</h3>
+<div class="modal-box">
 <table>
-<tr><td>1 Minggu</td><td>7K</td><td><button class="btn-order" onclick="orderWA('Bot 1 Minggu','7K')">Order</button></td></tr>
-<tr><td>1 Bulan</td><td>15K</td><td><button class="btn-order" onclick="orderWA('Bot 1 Bulan','15K')">Order</button></td></tr>
-<tr><td>Permanen</td><td>28K</td><td><button class="btn-order" onclick="orderWA('Bot Permanen','28K')">Order</button></td></tr>
+<tr><td>1 Minggu</td><td>7K</td><td><button onclick="order('Bot 1 Minggu','7K')">Order</button></td></tr>
+<tr><td>1 Bulan</td><td>15K</td><td><button onclick="order('Bot 1 Bulan','15K')">Order</button></td></tr>
+<tr><td>2 Bulan</td><td>17K</td><td><button onclick="order('Bot 2 Bulan','17K')">Order</button></td></tr>
+<tr><td>3 Bulan</td><td>23K</td><td><button onclick="order('Bot 3 Bulan','23K')">Order</button></td></tr>
+<tr><td>Permanen</td><td>28K</td><td><button onclick="order('Bot Permanen','28K')">Order</button></td></tr>
 </table>
-<div class="btn-close" onclick="closeModal('bot')">Tutup</div>
+<div class="close" onclick="closeM('bot')">Tutup</div>
 </div>
 </div>
 
+<!-- VIOLET -->
 <div id="violet" class="modal">
-<div class="modal-content">
-<h3>Script Violet Evergreen</h3>
+<div class="modal-box">
 <table>
-<tr><td>No Update</td><td>10K</td><td><button class="btn-order" onclick="orderWA('Violet No Update','10K')">Order</button></td></tr>
-<tr><td>Free Update</td><td>15K</td><td><button class="btn-order" onclick="orderWA('Violet Free Update','15K')">Order</button></td></tr>
+<tr><td>No Update</td><td>10K</td><td><button onclick="order('Violet No Update','10K')">Order</button></td></tr>
+<tr><td>Free Update</td><td>15K</td><td><button onclick="order('Violet Free Update','15K')">Order</button></td></tr>
+<tr><td>Reseller</td><td>20K</td><td><button onclick="order('Violet Reseller','20K')">Order</button></td></tr>
 </table>
-<div class="btn-close" onclick="closeModal('violet')">Tutup</div>
+<div class="close" onclick="closeM('violet')">Tutup</div>
 </div>
 </div>
 
-<div id="atrielle" class="modal">
-<div class="modal-content">
-<h3>Script ATRIELLE</h3>
+<!-- ATRIELLE -->
+<div id="script atrielle" class="modal">
+<div class="modal-box">
 <table>
-<tr><td>Basic (Enc)</td><td>25K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Basic','25K')">Order</button></td></tr>
-<tr><td>Full Source</td><td>30K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Full','30K')">Order</button></td></tr>
-<tr><td>PRO</td><td>55K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE PRO','55K')">Order</button></td></tr>
-<tr><td>Reseller Elit</td><td>80K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Reseller','80K')">Order</button></td></tr>
+<tr><td>No Update</td><td>25K</td><td><button onclick="order('Atrielle No Update','15K')">Order</button></td></tr>
+<tr><td>Free Update</td><td>55K</td><td><button onclick="order('Atrielle Free Update','20K')">Order</button></td></tr>
+<tr><td>Reseller</td><td>80K</td><td><button onclick="order('Atrielle Reseller','25K')">Order</button></td></tr>
 </table>
-<div class="btn-close" onclick="closeModal('atrielle')">Tutup</div>
+<div class="close" onclick="closeM('atrielle')">Tutup</div>
 </div>
 </div>
 
+<!-- RENAME -->
 <div id="rename" class="modal">
-<div class="modal-content">
-<h3>Rename Script</h3>
+<div class="modal-box">
 <table>
-<tr><td>Rename Biasa</td><td>5K</td><td><button class="btn-order" onclick="orderWA('Rename Biasa','5K')">Order</button></td></tr>
-<tr><td>Full Rename</td><td>10K</td><td><button class="btn-order" onclick="orderWA('Full Rename','10K')">Order</button></td></tr>
+<tr><td>Rename Biasa</td><td>5K</td><td><button onclick="order('Rename Biasa','5K')">Order</button></td></tr>
+<tr><td>Full Rename</td><td>10K</td><td><button onclick="order('Full Rename','10K')">Order</button></td></tr>
 </table>
-<div class="btn-close" onclick="closeModal('rename')">Tutup</div>
+<div class="close" onclick="closeM('rename')">Tutup</div>
 </div>
 </div>
 
