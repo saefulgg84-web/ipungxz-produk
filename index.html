@@ -6,75 +6,115 @@
 <title>IPUNGG SHOP</title>
 
 <style>
-*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif;margin:0;padding:0;}
-body{color:#e5e7eb;min-height:100vh;overflow-x:hidden;font-weight:900;background:linear-gradient(135deg,#1f2937,#0b1220);background-size:200% 200%;animation:gradMove 30s linear infinite}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif;margin:0;padding:0;font-weight:900}
+body{
+  color:#e5e7eb;
+  min-height:100vh;
+  background:linear-gradient(135deg,#020617,#0f172a,#020617);
+  background-size:200% 200%;
+  animation:bg 25s linear infinite;
+}
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.wrap{max-width:420px;margin:auto;padding:16px}
 
-/* BG */
-@keyframes gradMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-
-/* Welcome */
-#welcome{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;background:#111827}
-.welcome-box{max-width:360px;width:100%;padding:24px;border-radius:26px;text-align:center;background:#1f2937;border:1px solid rgba(255,255,255,.18)}
+/* WELCOME */
+#welcome{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;background:#020617}
+.welcome-box{background:#0f172a;border-radius:26px;padding:24px;width:90%;max-width:360px;text-align:center}
 .welcome-box img{width:120px;height:120px;border-radius:50%;margin-bottom:14px}
 .welcome-title{font-size:22px}
-.welcome-name{font-size:26px;margin-bottom:8px}
-.welcome-sub{opacity:.8;margin-bottom:18px}
-.start-btn{width:100%;padding:14px;border-radius:999px;border:0;background:#fbbf24;color:#000;font-size:16px;cursor:pointer}
+.welcome-name{font-size:26px;margin-bottom:6px}
+.welcome-sub{opacity:.7;margin-bottom:18px}
+.start-btn{width:100%;padding:14px;border-radius:999px;border:0;background:#fbbf24;color:#020617;font-size:16px;cursor:pointer}
 
-/* Header */
-.wrap{max-width:420px;margin:auto;padding:16px}
-.profile{background:rgba(255,255,255,.08);border-radius:22px;padding:18px;text-align:center;margin-bottom:16px;position:relative}
-.avatar{width:96px;height:96px;border-radius:50%;margin:auto;overflow:hidden}
-.avatar img{width:100%;height:100%}
+/* HEADER */
+.profile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:18px;text-align:center;margin-bottom:16px;position:relative}
+.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
 .name{font-size:22px}
-.tag{font-size:13px;opacity:.8}
-
-/* Menu */
+.tag{opacity:.8;font-size:13px}
 .menu-btn{position:absolute;top:14px;right:16px;font-size:22px;cursor:pointer}
-.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border-radius:14px;width:160px;padding:12px}
+.menu{display:none;position:absolute;top:48px;right:16px;background:#020617;border:1px solid #1e293b;border-radius:14px;width:160px;padding:12px}
 .menu a{display:block;padding:10px;border-radius:10px;color:#e5e7eb;text-decoration:none}
+.menu a:hover{background:#1e293b}
 
-/* Channel Payment */
+/* CHANNEL */
 .channel-payment{display:flex;gap:12px;margin-bottom:14px}
-.channel-payment a{flex:1;padding:20px;font-size:18px;border-radius:22px;text-align:center;background:#3b82f6;color:#fff;text-decoration:none}
+.channel-payment a{
+  flex:1;
+  padding:20px;
+  border-radius:22px;
+  text-align:center;
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+}
 
-/* Card */
-.card{background:rgba(255,255,255,.06);border-radius:18px;padding:12px;margin-bottom:14px;text-align:center;position:relative}
-.card img{width:100%;border-radius:12px}
-.card h3{margin:8px 0}
-.badge{position:absolute;top:8px;left:8px;background:#f59e0b;padding:4px 8px;border-radius:8px;font-size:12px}
-.card-btn{width:100%;padding:16px;border-radius:18px;border:0;background:#f59e0b;color:#fff;font-size:16px;cursor:pointer}
+/* CARD */
+.card{
+  background:rgba(255,255,255,.06);
+  border-radius:20px;
+  padding:12px;
+  margin-bottom:14px;
+  text-align:center;
+}
+.card img{width:100%;border-radius:14px;margin-bottom:10px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card small{opacity:.7;display:block;margin-bottom:10px}
+.card-btn{
+  width:100%;
+  padding:16px;
+  border-radius:18px;
+  border:0;
+  background:linear-gradient(135deg,#fbbf24,#f59e0b);
+  color:#020617;
+  font-size:16px;
+  cursor:pointer;
+}
 
-/* Modal */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);justify-content:center;align-items:center;z-index:9999}
-.modal-content{background:#1e293b;border-radius:18px;padding:16px;width:95%;max-width:400px;max-height:80vh;overflow:auto}
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);justify-content:center;align-items:center;z-index:9999}
+.modal-content{background:#0f172a;border-radius:18px;padding:16px;width:95%;max-width:400px;max-height:80vh;overflow:auto}
+.modal-content h3{text-align:center;margin-bottom:12px}
 .modal-content table{width:100%;border-collapse:collapse}
-.modal-content th,.modal-content td{padding:8px;border-bottom:1px solid #374151}
-.btn-order{background:#f59e0b;color:#fff;padding:6px 10px;border-radius:12px;text-decoration:none}
-.btn-close{margin-top:10px;padding:12px;background:#6b7280;border-radius:18px;text-align:center;cursor:pointer}
-
-footer{text-align:center;font-size:12px;opacity:.7;margin:18px 0}
+.modal-content th,.modal-content td{padding:8px;border-bottom:1px solid #334155;text-align:left}
+.btn-order{padding:6px 10px;border-radius:10px;border:0;background:#f59e0b;color:#020617;cursor:pointer}
+.btn-close{margin-top:10px;padding:12px;border-radius:14px;background:#475569;text-align:center;cursor:pointer}
+footer{text-align:center;opacity:.6;font-size:12px;margin-top:20px}
 </style>
 
 <script>
-function toggleMenu(){menu.style.display=menu.style.display==="block"?"none":"block"}
-function startSite(){welcome.style.display="none";bgm.play()}
-function openModal(id){document.getElementById(id).style.display="flex"}
-function closeModal(id){document.getElementById(id).style.display="none"}
+function toggleMenu(){
+  const m=document.getElementById('menu');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
+function startSite(){
+  document.getElementById('welcome').style.display='none';
+  document.getElementById('bgm').play();
+}
+function openModal(id){document.getElementById(id).style.display='flex'}
+function closeModal(id){document.getElementById(id).style.display='none'}
+function orderWA(p,h){
+  window.open(`https://wa.me/6283840810226?text=`+
+  encodeURIComponent(`Halo Admin, saya mau order ${p} (${h})`),'_blank');
+}
 </script>
 </head>
 
 <body>
-
 <audio id="bgm" loop>
 <source src="https://raw.githubusercontent.com/zionjs0/whatsapp-media/main/file_1765889062111.mp3">
 </audio>
 
-<!-- Welcome -->
+<!-- WELCOME -->
 <div id="welcome">
   <div class="welcome-box">
     <img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg">
-    <div class="welcome-title">WELCOME TO WEBSITE</div>
+    <div class="welcome-title">WELCOME</div>
     <div class="welcome-name">IPUNGG SHOP</div>
     <div class="welcome-sub">Panel • Bot • Script • Rename</div>
     <button class="start-btn" onclick="startSite()">Start Now</button>
@@ -82,8 +122,7 @@ function closeModal(id){document.getElementById(id).style.display="none"}
 </div>
 
 <div class="wrap">
-
-<!-- Header -->
+<!-- HEADER -->
 <div class="profile">
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <div id="menu" class="menu">
@@ -92,58 +131,68 @@ function closeModal(id){document.getElementById(id).style.display="none"}
   </div>
   <div class="avatar"><img src="https://img1.pixhost.to/images/10915/671360425_pungg-md.jpg"></div>
   <div class="name">IPUNGG SHOP</div>
-  <div class="tag">Panel • Bot • Script • Rename</div>
+  <div class="tag">Open 24/7</div>
 </div>
 
+<!-- CHANNEL -->
 <div class="channel-payment">
-  <a href="https://whatsapp.com/channel/0029VbBnbTk77qVWajMvKS2o">Channel</a>
-  <a href="https://payment-ipungg.vercel.app/">Payment</a>
+  <a href="#">📢 Channel</a>
+  <a href="#">💳 Payment</a>
 </div>
 
-<!-- Produk -->
+<!-- PRODUK -->
 <div class="card">
-  <img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
-  <h3>Script Violet Evergreen</h3>
-  <button class="card-btn" onclick="openModal('modal-script')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10914/671358155_pungg-md.jpg">
+<h3>Panel Pterodactyl</h3>
+<small>Mulai 1K</small>
+<button class="card-btn" onclick="openModal('panel')">Lihat List</button>
 </div>
 
 <div class="card">
-  <div class="badge">New</div>
-  <img src="https://files.catbox.moe/6hydra.jpg">
-  <h3>Script ATRIELLE</h3>
-  <button class="card-btn" onclick="openModal('modal-atrielle')">Lihat List</button>
+<img src="https://img1.pixhost.to/images/10914/671358380_pungg-md.jpg">
+<h3>Sewa Bot WhatsApp</h3>
+<small>Mulai 7K</small>
+<button class="card-btn" onclick="openModal('bot')">Lihat List</button>
 </div>
 
-<!-- Modal Violet -->
-<div id="modal-script" class="modal">
-<div class="modal-content">
+<div class="card">
+<img src="https://img1.pixhost.to/images/10915/671367400_pungg-md.jpg">
 <h3>Script Violet Evergreen</h3>
-<table>
-<tr><th>Produk</th><th>Harga</th><th>Order</th></tr>
-<tr><td>No Update</td><td>10k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-<tr><td>Free Update</td><td>15k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-<tr><td>Reseller</td><td>20k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-</table>
-<div class="btn-close" onclick="closeModal('modal-script')">Tutup</div>
-</div>
+<small>Mulai 10K</small>
+<button class="card-btn" onclick="openModal('violet')">Lihat List</button>
 </div>
 
-<!-- Modal ATRIELLE -->
-<div id="modal-atrielle" class="modal">
-<div class="modal-content">
+<div class="card">
+<img src="https://files.catbox.moe/6hydra.jpg">
 <h3>Script ATRIELLE</h3>
-<table>
-<tr><th>Produk</th><th>Harga</th><th>Order</th></tr>
-<tr><td>Basic (Enc)</td><td>25k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-<tr><td>Full Source</td><td>30k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-<tr><td>Pro</td><td>55k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-<tr><td>Reseller Elit</td><td>80k</td><td><a class="btn-order" href="https://wa.me/6283840810226">Order</a></td></tr>
-</table>
-<div class="btn-close" onclick="closeModal('modal-atrielle')">Tutup</div>
+<small>25K – 80K</small>
+<button class="card-btn" onclick="openModal('atrielle')">Lihat List</button>
 </div>
+
+<div class="card">
+<img src="https://files.catbox.moe/isqlpn.jpg">
+<h3>Rename Script</h3>
+<small>5K – 10K</small>
+<button class="card-btn" onclick="openModal('rename')">Lihat List</button>
 </div>
 
 <footer>© 2025 IPUNGG SHOP</footer>
 </div>
+
+<!-- MODALS -->
+<div id="atrielle" class="modal">
+<div class="modal-content">
+<h3>Script ATRIELLE</h3>
+<table>
+<tr><th>Paket</th><th>Harga</th><th></th></tr>
+<tr><td>Basic (Enc)</td><td>25K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Basic','25K')">Order</button></td></tr>
+<tr><td>Full Source</td><td>30K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Full','30K')">Order</button></td></tr>
+<tr><td>PRO</td><td>55K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE PRO','55K')">Order</button></td></tr>
+<tr><td>Reseller Elit</td><td>80K</td><td><button class="btn-order" onclick="orderWA('ATRIELLE Reseller','80K')">Order</button></td></tr>
+</table>
+<div class="btn-close" onclick="closeModal('atrielle')">Tutup</div>
+</div>
+</div>
+
 </body>
   </html>
